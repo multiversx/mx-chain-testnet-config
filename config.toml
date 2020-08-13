@@ -453,12 +453,12 @@
    Type = "json"
 
 [EpochStartConfig]
-    MinRoundsBetweenEpochs = 14400
-    RoundsPerEpoch         = 14400
+    MinRoundsBetweenEpochs = 2400
+    RoundsPerEpoch         = 2400
     # Min and Max ShuffledOutRestartThreshold represents the minimum and maximum duration of an epoch (in percentage) after a node which
     # has been shuffled out has to restart its process in order to start in a new shard
-    MinShuffledOutRestartThreshold = 0.01
-    MaxShuffledOutRestartThreshold = 0.05
+    MinShuffledOutRestartThreshold = 0.06
+    MaxShuffledOutRestartThreshold = 0.30
 
     MinNumConnectedPeersToStart       = 6
     MinNumOfPeersToConsiderBlockValid = 6
@@ -526,7 +526,7 @@
 [Hardfork]
     EnableTrigger = true
     EnableTriggerFromP2P = true
-    PublicKeyToListenFrom = "6a02b93375e78aed4e0e3369ef2182dfc060eea01df640eacc5eca5f759f62c8271fbbf90863e896e2453384118be20179433cb1dfc1bd8df962c80f3da94ea42dffaf70025b6fd6a5b4814bc4b15cf6751c990fe21d392f1bc88c15bd354a8c"
+    PublicKeyToListenFrom = "d6d32e28f2df244624eeaccf5e08f7a6c617a6c948e4a42e19c1b6f68ea0c77eba3ee10501e179f788455d7e77c3cf082bc9a7a4fa8f136a25497189a37d10bc6826cc3ed5da714f6c931bce5af271e5d558e3b8142ad1e367fd95a4c7f88c11"
 	CloseAfterExportInMinutes = 10000
 	AfterHardFork = false
 	ImportFolder = "export"
@@ -614,7 +614,7 @@
     FolderPath = "health-records"
 
 [SoftwareVersionConfig]
-    StableTagLocation = "https://api.github.com/repos/ElrondNetwork/elrond-config-mainnet/releases/latest"
+    StableTagLocation = "https://api.github.com/repos/ElrondNetwork/elrond-config-testnet/releases/latest"
     PollingIntervalInMinutes = 65
 
 [FullHistory]

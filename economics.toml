@@ -21,7 +21,7 @@
     LeaderPercentage = 0.1 #fraction of value 1 - 10%
     DeveloperPercentage = 0.3 #fraction of value 1 - 30%
     ProtocolSustainabilityPercentage = 0.1 #fraction of value 0.1 - 10%
-    ProtocolSustainabilityAddress = "erd135enn78u7fy352ny9mcl26a08wvu02mjdumfkt7cn587cwtnerksagqsfm"
+    ProtocolSustainabilityAddress = "erd1frfpd8sdh02qukg3lt8d8seyxkeznd0lpqukytpq49nrmdme0fnqgd2qt3"
 
 [FeeSettings]
     MaxGasLimitPerBlock     = "1500000000"

@@ -15,7 +15,7 @@
 
 [ESDTSystemSCConfig]
     BaseIssuingCost = "5000000000000000000" #5ERD
-    OwnerAddress = "erd1ze6pgefwc7mdx0rhje3h50kkgt26ut3gx8ytezndkz8fjcf96gsqsd7ugw"
+    OwnerAddress = "erd1yy4hnuugmd3245m4d0qxlsgzqv55yeuu5y5r99p8lcj2436vv0nq6drqhc"
     Disabled = true
 
 [GovernanceSystemSCConfig]
