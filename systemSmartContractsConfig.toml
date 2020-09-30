@@ -3,8 +3,8 @@
     MinStakeValue = "100000000000000000000" #100 eGLD
     UnBondPeriod = 144000
     MinStepValue = "100000000000000000000"
-    AuctionEnableNonce = 100000000000
-    StakeEnableNonce = 100000000000
+    AuctionEnableEpoch = 100000000000
+    StakeEnableEpoch = 100000000000
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
     BleedPercentagePerRound = 0.00001
@@ -16,7 +16,7 @@
 [ESDTSystemSCConfig]
     BaseIssuingCost = "5000000000000000000" #5 eGLD
     OwnerAddress = "erd1yy4hnuugmd3245m4d0qxlsgzqv55yeuu5y5r99p8lcj2436vv0nq6drqhc"
-    Disabled = true
+    EnabledEpoch = 100000000000
 
 [GovernanceSystemSCConfig]
 	ProposalCost = "5000000000000000000" #5 eGLD
@@ -24,4 +24,4 @@
 	MinQuorum    = 400
 	MinPassThreshold = 300
 	MinVetoThreshold = 50
-	Disabled     = true
+    EnabledEpoch = 100000000000
