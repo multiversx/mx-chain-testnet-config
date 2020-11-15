@@ -8,8 +8,8 @@
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
     BleedPercentagePerRound = 0.00001
-    MaxNumberOfNodesForStake = 350
-    NodesToSelectInAuction = 350
+    MaxNumberOfNodesForStake = 413
+    NodesToSelectInAuction = 413
     UnJailValue = "2500000000000000000" #0.1% of genesis node price
     ActivateBLSPubKeyMessageVerification = true
 
