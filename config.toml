@@ -18,7 +18,7 @@
    BuiltInFunctionsEnableEpoch = 1000000
 
    # RelayedTransactionsEnableEpoch represents the epoch when the relayed transactions will be enabled
-   RelayedTransactionsEnableEpoch = 1000000
+   RelayedTransactionsEnableEpoch = 116
 
    # PenalizedTooMuchGasEnableEpoch represents the epoch when the penalization for using too much gas will be enabled
    PenalizedTooMuchGasEnableEpoch = 6
