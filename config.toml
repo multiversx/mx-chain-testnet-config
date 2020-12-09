@@ -617,7 +617,7 @@
             MaxLoopTime = 1000
     [VirtualMachine.Querying]
         OutOfProcessEnabled = false
-        WarmInstanceEnabled = true
+        WarmInstanceEnabled = false
 
 [Hardfork]
     EnableTrigger = true
