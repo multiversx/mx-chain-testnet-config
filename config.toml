@@ -12,13 +12,13 @@
    StartInEpochEnabled = true
 
    # SCDeployEnableEpoch represents the epoch when the deployment of smart contracts will be enabled
-   SCDeployEnableEpoch = 23
+   SCDeployEnableEpoch = 24
 
    # BuiltInFunctionsEnableEpoch represents the epoch when the built in functions will be enabled
-   BuiltInFunctionsEnableEpoch = 23
+   BuiltInFunctionsEnableEpoch = 24
 
    # RelayedTransactionsEnableEpoch represents the epoch when the relayed transactions will be enabled
-   RelayedTransactionsEnableEpoch = 23
+   RelayedTransactionsEnableEpoch = 24
 
    # PenalizedTooMuchGasEnableEpoch represents the epoch when the penalization for using too much gas will be enabled
    PenalizedTooMuchGasEnableEpoch = 0
@@ -35,22 +35,21 @@
 
    # TransactionSignedWithTxHashEnableEpoch represents the epoch when the node will also accept transactions that are
    # signed with the hash of transaction
-   TransactionSignedWithTxHashEnableEpoch = 23
+   TransactionSignedWithTxHashEnableEpoch = 24
 
    # MetaProtectionEnableEpoch represents the epoch when the transactions to the metachain are checked to have enough gas
-   MetaProtectionEnableEpoch = 23
+   MetaProtectionEnableEpoch = 24
 
    # AheadOfTimeGasUsageEnableEpoch represents the epoch when the cost of smart contract prepare changes from compiler per byte to ahead of time prepare per byte
-   AheadOfTimeGasUsageEnableEpoch = 23
+   AheadOfTimeGasUsageEnableEpoch = 24
 
    # GasPriceModifierEnableEpoch represents the epoch when the gas price modifier in fee computation is enabled
-   GasPriceModifierEnableEpoch = 23
+   GasPriceModifierEnableEpoch = 24
 
-   # TO BE CHANGED IN MAINNET AND PUBLIC TESTNET CONFIGS
    # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
    MaxNodesChangeEnableEpoch = [
         { EpochEnable = 0, MaxNumNodes = 437, NodesToShufflePerShard = 23 },
-        { EpochEnable = 23, MaxNumNodes = 450, NodesToShufflePerShard = 23 }
+        { EpochEnable = 24, MaxNumNodes = 450, NodesToShufflePerShard = 23 }
    ]
 
    # GenesisString represents the encoded string for the genesis block
@@ -72,7 +71,7 @@
 [GasSchedule]
     GasScheduleByEpochs = [
         { StartEpoch = 0, FileName = "gasScheduleV1.toml" },
-        { StartEpoch = 23, FileName = "gasScheduleV2.toml" },
+        { StartEpoch = 24, FileName = "gasScheduleV2.toml" },
     ]
 
 [StoragePruning]
