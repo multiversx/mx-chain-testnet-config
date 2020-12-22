@@ -5,8 +5,8 @@
     UnBondPeriod = 2500
     MinStepValue = "100000000000000000000"
     StakeEnableEpoch = 0
-    StakingV2Epoch = 24
-    DoubleKeyProtectionEnableEpoch = 24
+    StakingV2Epoch = 26
+    DoubleKeyProtectionEnableEpoch = 26
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
     BleedPercentagePerRound = 0.00001
@@ -17,7 +17,7 @@
 [ESDTSystemSCConfig]
     BaseIssuingCost = "5000000000000000000" #5 eGLD
     OwnerAddress = "erd1yy4hnuugmd3245m4d0qxlsgzqv55yeuu5y5r99p8lcj2436vv0nq6drqhc"
-    EnabledEpoch = 24
+    EnabledEpoch = 26
 
 [GovernanceSystemSCConfig]
     ProposalCost = "5000000000000000000" #5 eGLD
