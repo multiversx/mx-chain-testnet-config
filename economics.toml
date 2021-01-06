@@ -18,8 +18,8 @@
     Denomination = 18 # represents the smallest eGLD subdivision (10^-X eGLD for a denomination of X)
 
 [RewardsSettings]
-    LeaderPercentage = 0.1 #fraction of value 1 - 10%
-    DeveloperPercentage = 0.3 #fraction of value 1 - 30%
+    LeaderPercentage = 0.1 #fraction of value 0.1 - 10%
+    DeveloperPercentage = 0.3 #fraction of value 0.3 - 30%
     ProtocolSustainabilityPercentage = 0.1 #fraction of value 0.1 - 10%
     ProtocolSustainabilityAddress = "erd1frfpd8sdh02qukg3lt8d8seyxkeznd0lpqukytpq49nrmdme0fnqgd2qt3"
     TopUpGradientPoint = "3000000000000000000000000" # 3MIL eGLD
