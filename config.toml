@@ -35,7 +35,7 @@
 
     # TransactionSignedWithTxHashEnableEpoch represents the epoch when the node will also accept transactions that are
     # signed with the hash of transaction
-    TransactionSignedWithTxHashEnableEpoch = 12
+    TransactionSignedWithTxHashEnableEpoch = 21
 
    # MetaProtectionEnableEpoch represents the epoch when the transactions to the metachain are checked to have enough gas
    MetaProtectionEnableEpoch = 3
@@ -50,7 +50,7 @@
    # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
    MaxNodesChangeEnableEpoch = [
         { EpochEnable = 0, MaxNumNodes = 2169, NodesToShufflePerShard = 143 },
-        { EpochEnable = 12, MaxNumNodes = 3200, NodesToShufflePerShard = 80 }
+        { EpochEnable = 21, MaxNumNodes = 3200, NodesToShufflePerShard = 80 }
    ]
 
    # GenesisString represents the encoded string for the genesis block
