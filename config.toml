@@ -33,9 +33,9 @@
    # also (minimum) hysteresis nodes for the minimum number of nodes
    SwitchHysteresisForMinNodesEnableEpoch = 1
 
-    # TransactionSignedWithTxHashEnableEpoch represents the epoch when the node will also accept transactions that are
-    # signed with the hash of transaction
-    TransactionSignedWithTxHashEnableEpoch = 21
+   # TransactionSignedWithTxHashEnableEpoch represents the epoch when the node will also accept transactions that are
+   # signed with the hash of transaction
+   TransactionSignedWithTxHashEnableEpoch = 21
 
    # MetaProtectionEnableEpoch represents the epoch when the transactions to the metachain are checked to have enough gas
    MetaProtectionEnableEpoch = 4
