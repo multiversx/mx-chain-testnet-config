@@ -13,4 +13,4 @@
 # elrond-config for the official testnet
 
 Elrond official testnet configuration files used in conjunction with elrond-go project. 
-For more info how to connect to the testnet, please check [docs.elrond.com](https://docs.elrond.com/start-a-validator-node/start-the-network)
+For more info how to connect to the testnet, please check [docs.elrond.com](https://staging-docs.elrond.com/validators/testnet/config-scripts/)
