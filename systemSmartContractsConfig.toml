@@ -7,6 +7,7 @@
     MinStepValue = "100000000000000000000"
     StakeEnableEpoch = 0
     StakingV2Epoch = 5
+    CorrectLastUnjailedEpoch = 144
     DoubleKeyProtectionEnableEpoch = 1
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
