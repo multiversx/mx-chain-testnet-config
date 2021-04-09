@@ -35,7 +35,7 @@
 
    # TransactionSignedWithTxHashEnableEpoch represents the epoch when the node will also accept transactions that are
    # signed with the hash of transaction
-   TransactionSignedWithTxHashEnableEpoch = 5
+   TransactionSignedWithTxHashEnableEpoch = 1
 
    # MetaProtectionEnableEpoch represents the epoch when the transactions to the metachain are checked to have enough gas
    MetaProtectionEnableEpoch = 1
@@ -47,25 +47,16 @@
    GasPriceModifierEnableEpoch = 1
 
    # RepairCallbackEnableEpoch represents the epoch when the callback repair is activated for scrs
-   RepairCallbackEnableEpoch = 5
+   RepairCallbackEnableEpoch = 1
 
    # BlockGasAndFeesReCheckEnableEpoch represents the epoch when gas and fees used in each created or processed block are re-checked
-   BlockGasAndFeesReCheckEnableEpoch = 5
-
-   # ReturnDataToLastTransferEnableEpoch represents the epoch when returned data is added to last output transfer for callbacks
-   ReturnDataToLastTransferEnableEpoch = 99
-
-   # ArwenESDTFunctionsEnableEpoch represents the epoch when the new ESDT functions are enabled in arwen
-   ArwenESDTFunctionsEnableEpoch = 99
-
-   # SenderInOutTransferEnableEpoch represents the epoch when the feature of having different senders in output transfer is enabled
-   SenderInOutTransferEnableEpoch = 99
+   BlockGasAndFeesReCheckEnableEpoch = 1
 
    # TO BE CHANGED IN MAINNET AND PUBLIC TESTNET CONFIGS
    # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
    MaxNodesChangeEnableEpoch = [
         { EpochEnable = 0, MaxNumNodes = 2169, NodesToShufflePerShard = 143 },
-        { EpochEnable = 6, MaxNumNodes = 3200, NodesToShufflePerShard = 80 }
+        { EpochEnable = 1, MaxNumNodes = 3200, NodesToShufflePerShard = 80 }
    ]
 
    # GenesisString represents the encoded string for the genesis block
@@ -87,8 +78,7 @@
 [GasSchedule]
     GasScheduleByEpochs = [
         { StartEpoch = 0, FileName = "gasScheduleV1.toml" },
-        { StartEpoch = 1, FileName = "gasScheduleV2.toml" },
-        { StartEpoch = 5, FileName = "gasScheduleV3.toml" },
+        { StartEpoch = 1, FileName = "gasScheduleV3.toml" },
     ]
 
 [StoragePruning]
@@ -570,12 +560,12 @@
    Type = "json"
 
 [EpochStartConfig]
-    MinRoundsBetweenEpochs = 2400
-    RoundsPerEpoch         = 2400
+    MinRoundsBetweenEpochs = 1200
+    RoundsPerEpoch         = 1200
     # Min and Max ShuffledOutRestartThreshold represents the minimum and maximum duration of an epoch (in percentage) after a node which
     # has been shuffled out has to restart its process in order to start in a new shard
-    MinShuffledOutRestartThreshold = 0.06
-    MaxShuffledOutRestartThreshold = 0.30
+    MinShuffledOutRestartThreshold = 0.10
+    MaxShuffledOutRestartThreshold = 0.20
 
     MinNumConnectedPeersToStart       = 6
     MinNumOfPeersToConsiderBlockValid = 6
