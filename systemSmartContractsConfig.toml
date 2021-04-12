@@ -7,7 +7,6 @@
     MinStepValue = "100000000000000000000"
     StakeEnableEpoch = 0
     StakingV2Epoch = 1
-    CorrectLastUnjailedEpoch = 1000000
     DoubleKeyProtectionEnableEpoch = 1
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
@@ -17,9 +16,9 @@
     ActivateBLSPubKeyMessageVerification = true
 
 [ESDTSystemSCConfig]
-    BaseIssuingCost = "50000000000000000" #0.05 eGLD
+    BaseIssuingCost = "5000000000000000000" #5 eGLD -> change this to 0.05eGLD on upgrade
     OwnerAddress = "erd1yy4hnuugmd3245m4d0qxlsgzqv55yeuu5y5r99p8lcj2436vv0nq6drqhc"
-    EnabledEpoch = 10
+    EnabledEpoch = 1000000
 
 [GovernanceSystemSCConfig]
     ProposalCost = "5000000000000000000" #5 eGLD
