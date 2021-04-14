@@ -19,7 +19,7 @@
 [ESDTSystemSCConfig]
     BaseIssuingCost = "5000000000000000000" #5 eGLD
     OwnerAddress = "erd1yy4hnuugmd3245m4d0qxlsgzqv55yeuu5y5r99p8lcj2436vv0nq6drqhc"
-    EnabledEpoch = 10
+    EnabledEpoch = 1000000
 
 [GovernanceSystemSCConfig]
     ProposalCost = "5000000000000000000" #5 eGLD
