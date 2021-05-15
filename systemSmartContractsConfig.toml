@@ -35,9 +35,10 @@
     EnabledEpoch = 1 #enable epoch should not be 0
     MinStakeAmount = "1000000000000000000" #1 eGLD
     ConfigChangeAddress = "erd1dfrskqy096ly3zcgu4mtxkc5cv3ehgzc0fxq75m5a2uy7cg8f05q3766nv" #should use a multisign contract instead of a wallet address
+    ReDelegateBelowMinCheckEnableEpoch = 346
+    ValidatorToDelegationEnableEpoch = 315
 
 [DelegationSystemSCConfig]
     EnabledEpoch   = 1 #enable epoch should not be 0
-    ValidatorToDelegationEnableEpoch = 315
     MinServiceFee  = 0
     MaxServiceFee  = 10000
