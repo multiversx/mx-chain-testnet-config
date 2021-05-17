@@ -53,7 +53,7 @@ check_nonce_grows() {
         continue
       fi
       if [ "${CURRENT_NONCE}" -gt "${PREVIOUS_NONCE}" ]; then
-        echo "node is syncing... nonce is growing"
+        echo "node is syncing... nonce is increasing"
         break
       fi
       PREVIOUS_NONCE=${CURRENT_NONCE}
