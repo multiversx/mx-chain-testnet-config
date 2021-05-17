@@ -13,6 +13,12 @@ if [ ! -f "${OUTPUT_FOLDER}/validatorKey.pem" ]; then
   docker run --rm --mount type=bind,source=${OUTPUT_FOLDER},destination=/keys --workdir /keys elrondnetwork/elrond-go-keygenerator:latest
 fi
 
+#check if 'gnome-terminal' is installed
+if ! command -v gnome-terminal &> /dev/null; then
+    apt install -y gnome-terminal
+fi
+
+
 ## run docker image
 PORT=8080
 gnome-terminal -- docker run -p 8080:${PORT} --mount type=bind,source=${OUTPUT_FOLDER}/,destination=/data ${IMAGE_NAME} --validator-key-pem-file="/data/validatorKey.pem" --log-level *:DEBUG --log-save --destination-shard-as-observer=${SHARD}
