@@ -21,6 +21,14 @@ if [ ! -f "${OUTPUT_FOLDER}/validatorKey.pem" ]; then
   docker run --rm --mount type=bind,source=${OUTPUT_FOLDER},destination=/keys --workdir /keys elrondnetwork/elrond-go-keygenerator:latest
 fi
 
+# check start time from nodeSetup.json
+START_TIME=$(cat nodesSetup.json | jq '.startTime')
+CURRENT_TIME=$(date +"%s")
+if [ "${START_TIME}" -gt "${CURRENT_TIME}" ]; then
+  echo "the start time of the blockchain from nodeSetup.json is greater than the current timstamp"
+  exit 0
+fi
+
 ## run docker image
 PORT=8080
 docker run -d -p 8080:${PORT} --mount type=bind,source=${OUTPUT_FOLDER}/,destination=/data ${IMAGE_NAME} --validator-key-pem-file="/data/validatorKey.pem" --log-level *:DEBUG --log-save --destination-shard-as-observer=${SHARD}
