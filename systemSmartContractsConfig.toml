@@ -9,6 +9,7 @@
     StakingV2Epoch = 1
     CorrectLastUnjailedEpoch = 2
     DoubleKeyProtectionEnableEpoch = 1
+    UnbondTokensV2EnableEpoch = 6
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
     BleedPercentagePerRound = 0.00001
@@ -34,6 +35,8 @@
     EnabledEpoch = 1 #enable epoch should not be 0
     MinStakeAmount = "1000000000000000000" #1 eGLD
     ConfigChangeAddress = "erd1dfrskqy096ly3zcgu4mtxkc5cv3ehgzc0fxq75m5a2uy7cg8f05q3766nv" #should use a multisign contract instead of a wallet address
+    ReDelegateBelowMinCheckEnableEpoch = 6
+    ValidatorToDelegationEnableEpoch = 6
 
 [DelegationSystemSCConfig]
     EnabledEpoch   = 1 #enable epoch should not be 0
