@@ -5,11 +5,6 @@
     UnBondPeriod = 2400
     UnBondPeriodInEpochs = 2
     MinStepValue = "100000000000000000000"
-    StakeEnableEpoch = 0
-    StakingV2Epoch = 1
-    CorrectLastUnjailedEpoch = 2
-    DoubleKeyProtectionEnableEpoch = 1
-    UnbondTokensV2EnableEpoch = 6
     NumRoundsWithoutBleed = 100
     MaximumPercentageToBleed = 0.5
     BleedPercentagePerRound = 0.00001
@@ -20,7 +15,6 @@
 [ESDTSystemSCConfig]
     BaseIssuingCost = "5000000000000000000" #5 eGLD
     OwnerAddress = "erd1yy4hnuugmd3245m4d0qxlsgzqv55yeuu5y5r99p8lcj2436vv0nq6drqhc"
-    EnabledEpoch = 3
 
 [GovernanceSystemSCConfig]
     ProposalCost = "5000000000000000000" #5 eGLD
@@ -28,17 +22,12 @@
     MinQuorum    = 400
     MinPassThreshold = 300
     MinVetoThreshold = 50
-    EnabledEpoch = 1000000
 
 [DelegationManagerSystemSCConfig]
     MinCreationDeposit = "1250000000000000000000" #1.25K eGLD
-    EnabledEpoch = 1 #enable epoch should not be 0
     MinStakeAmount = "1000000000000000000" #1 eGLD
     ConfigChangeAddress = "erd1dfrskqy096ly3zcgu4mtxkc5cv3ehgzc0fxq75m5a2uy7cg8f05q3766nv" #should use a multisign contract instead of a wallet address
-    ReDelegateBelowMinCheckEnableEpoch = 6
-    ValidatorToDelegationEnableEpoch = 6
 
 [DelegationSystemSCConfig]
-    EnabledEpoch   = 1 #enable epoch should not be 0
     MinServiceFee  = 0
     MaxServiceFee  = 10000
