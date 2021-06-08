@@ -55,6 +55,9 @@
    # ReturnDataToLastTransferEnableEpoch represents the epoch when returned data is added to last output transfer for callbacks
    ReturnDataToLastTransferEnableEpoch = 2
 
+   # ArwenESDTFunctionsEnableEpoch represents the epoch when the new ESDT functions are enabled in arwen
+   ArwenESDTFunctionsEnableEpoch = 2
+
    # SenderInOutTransferEnableEpoch represents the epoch when the feature of having different senders in output transfer is enabled
    SenderInOutTransferEnableEpoch = 2
 
@@ -62,10 +65,10 @@
    BalanceWaitingListsEnableEpoch = 2
 
    # SaveJailedAlwaysEnableEpoch represents the epoch when saving jailed status at end of epoch will happen in all cases
-   SaveJailedAlwaysEnableEpoch = 6
+   SaveJailedAlwaysEnableEpoch = 3
 
    # WaitingListFixEnableEpoch represents the epoch when the 6 epoch waiting list fix is enabled
-   WaitingListFixEnableEpoch = 6
+   WaitingListFixEnableEpoch = 3
 
    # TO BE CHANGED IN MAINNET AND PUBLIC TESTNET CONFIGS
    # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
@@ -640,34 +643,13 @@
 
 [VirtualMachine]
     [VirtualMachine.Execution]
-        OutOfProcessEnabled = true
-        ArwenVersions = [
-            { StartEpoch = 0, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 138, Version = "v1.3", OutOfProcessSupported = false },
-            { StartEpoch = 139, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 140, Version = "v1.3", OutOfProcessSupported = false },
-            { StartEpoch = 141, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 142, Version = "v1.3", OutOfProcessSupported = false },
-            { StartEpoch = 143, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 144, Version = "v1.3", OutOfProcessSupported = false },
-        ]
+        OutOfProcessEnabled = false
         [VirtualMachine.Execution.OutOfProcessConfig]
             LogsMarshalizer = "json"
             MessagesMarshalizer = "json"
             MaxLoopTime = 1000
     [VirtualMachine.Querying]
         NumConcurrentVMs = 1
-        OutOfProcessEnabled = true
-        ArwenVersions = [
-            { StartEpoch = 0, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 138, Version = "v1.3", OutOfProcessSupported = false },
-            { StartEpoch = 139, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 140, Version = "v1.3", OutOfProcessSupported = false },
-            { StartEpoch = 141, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 142, Version = "v1.3", OutOfProcessSupported = false },
-            { StartEpoch = 143, Version = "v1.2", OutOfProcessSupported = false },
-            { StartEpoch = 144, Version = "v1.3", OutOfProcessSupported = false },
-        ]
         [VirtualMachine.Querying.OutOfProcessConfig]
             LogsMarshalizer = "json"
             MessagesMarshalizer = "json"
