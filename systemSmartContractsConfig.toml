@@ -18,12 +18,12 @@
     ActivateBLSPubKeyMessageVerification = true
 
 [ESDTSystemSCConfig]
-    BaseIssuingCost = "5000000000000000000" #5 eGLD
+    BaseIssuingCost = "50000000000000000" #0.05 eGLD
     OwnerAddress = "erd1uq2tmp2aeev3wdl2znphchenztngjpc030ze46c38wqru4vf5gss4r6kuk"
     EnabledEpoch = 2
 
 [GovernanceSystemSCConfig]
-    ProposalCost = "50000000000000000" #0.05 eGLD
+    ProposalCost = "5000000000000000000" #5 eGLD
     NumNodes     = 500
     MinQuorum    = 400
     MinPassThreshold = 300
