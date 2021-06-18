@@ -1,6 +1,6 @@
 env:
-  IMAGE_NODE: elrond-node-testnet
-  REGISTRY_HOSTNAME: ElrondNetwork
+  IMAGE_NODE: elrond-go-node-testnet
+  REGISTRY_HOSTNAME: elrondnetwork
 
 name: Build Docker image & push
 
@@ -29,8 +29,6 @@ jobs:
           cd ${GITHUB_WORKSPACE} && docker build -t "${REGISTRY_HOSTNAME}/${IMAGE_NODE}:${TAG_VERSION}" -f ./docker/Dockerfile .
       - name: "Push image"
         run: |
-          docker login --username miiu96 --password ${{ secrets.DOCKER_HUB_TOKEN }}
+          docker login --username lucianmincu --password ${{ secrets.DOCKERHUB_TOKEN }}
           TAG_VERSION=${{ steps.get_version.outputs.VERSION }}
           docker push "${REGISTRY_HOSTNAME}/${IMAGE_NODE}:${TAG_VERSION}"
-
-
