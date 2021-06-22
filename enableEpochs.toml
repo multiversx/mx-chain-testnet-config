@@ -78,7 +78,7 @@
     RelayedTransactionsV2EnableEpoch = 1000000
 
     # UnbondTokensV2EnableEpoch represents the epoch when the new implementation of the unbond tokens function is available
-    UnbondTokensV2EnableEpoch = 3
+    UnbondTokensV2EnableEpoch = 98
 
     # SaveJailedAlwaysEnableEpoch represents the epoch when saving jailed status at end of epoch will happen in all cases
     SaveJailedAlwaysEnableEpoch = 3
@@ -95,7 +95,10 @@
     # GovernanceSCEnableEpoch represents the epoch when the governance SC is enabled
     GovernanceSCEnableEpoch = 1000000
 
-    # TO BE CHANGED IN MAINNET AND PUBLIC TESTNET CONFIGS
+    # IncrementSCRNonceInMultiTransferEnableEpoch represents the epoch when the fix for preventing the generation of the same SCRs
+    # is enabled. The fix is done by adding an extra increment.
+    IncrementSCRNonceInMultiTransferEnableEpoch = 98
+
     # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
     MaxNodesChangeEnableEpoch = [
         { EpochEnable = 0, MaxNumNodes = 2169, NodesToShufflePerShard = 143 },
