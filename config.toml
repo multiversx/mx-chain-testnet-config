@@ -280,7 +280,9 @@
         MaxOpenFiles = 10
 
 [EvictionWaitingList]
-    Size = 10000
+    #total max size ~ 2 * [(RoothashesSize * 32) + (HashesSize * 32)]
+    RootHashesSize = 10000
+    HashesSize = 100000
     [EvictionWaitingList.DB]
         FilePath = "EvictionWaitingList"
         Type = "LvlDBSerial"
@@ -553,15 +555,15 @@
    Type = "json"
 
 [EpochStartConfig]
-    MinRoundsBetweenEpochs = 1200
-    RoundsPerEpoch         = 1200
+    MinRoundsBetweenEpochs = 20
+    RoundsPerEpoch         = 200
     # Min and Max ShuffledOutRestartThreshold represents the minimum and maximum duration of an epoch (in percentage) after a node which
     # has been shuffled out has to restart its process in order to start in a new shard
-    MinShuffledOutRestartThreshold = 0.10
-    MaxShuffledOutRestartThreshold = 0.20
+    MinShuffledOutRestartThreshold = 0.05
+    MaxShuffledOutRestartThreshold = 0.25
 
-    MinNumConnectedPeersToStart       = 6
-    MinNumOfPeersToConsiderBlockValid = 6
+    MinNumConnectedPeersToStart       = 2
+    MinNumOfPeersToConsiderBlockValid = 2
 
 # ResourceStats, if enabled, will output in a folder called "stats"
 # resource statistics. For example: number of active go routines, memory allocation, number of GC sweeps, etc.
@@ -573,11 +575,11 @@
 # Heartbeat, if enabled, will output a heartbeat signal once x seconds,
 # where x in [MinTimeToWaitBetweenBroadcastsInSec, MaxTimeToWaitBetweenBroadcastsInSec)
 [Heartbeat]
-   MinTimeToWaitBetweenBroadcastsInSec  = 50
-   MaxTimeToWaitBetweenBroadcastsInSec  = 70
+   MinTimeToWaitBetweenBroadcastsInSec  = 20
+   MaxTimeToWaitBetweenBroadcastsInSec  = 25
    HeartbeatRefreshIntervalInSec        = 60
-   HideInactiveValidatorIntervalInSec   = 600
-   DurationToConsiderUnresponsiveInSec  = 300
+   HideInactiveValidatorIntervalInSec   = 3600
+   DurationToConsiderUnresponsiveInSec  = 60
    [Heartbeat.HeartbeatStorage]
        [Heartbeat.HeartbeatStorage.Cache]
             Name = "HeartbeatStorage"
@@ -624,6 +626,7 @@
         ArwenVersions = [
             { StartEpoch = 0, Version = "v1.2" },
             { StartEpoch = 1, Version = "v1.3" },
+            { StartEpoch = 333, Version = "v1.4" },
         ]
 
     [VirtualMachine.Querying]
@@ -631,6 +634,7 @@
         ArwenVersions = [
             { StartEpoch = 0, Version = "v1.2" },
             { StartEpoch = 1, Version = "v1.3" },
+            { StartEpoch = 333, Version = "v1.4" },
         ]
 
 [Hardfork]
@@ -733,6 +737,20 @@
 [SoftwareVersionConfig]
     StableTagLocation = "https://api.github.com/repos/ElrondNetwork/elrond-config-testnet/releases/latest"
     PollingIntervalInMinutes = 65
+
+[LogsAndEvents]
+    SaveInStorageEnabled = false
+    [LogsAndEvents.TxLogsStorage.Cache]
+        Name = "TxLogsStorage"
+        Capacity = 1000
+        Type = "SizeLRU"
+        SizeInBytes = 20971520 #20MB
+    [LogsAndEvents.TxLogsStorage.DB]
+        FilePath = "Logs"
+        Type = "LvlDBSerial"
+        BatchDelaySeconds = 2
+        MaxBatchSize = 100
+        MaxOpenFiles = 10
 
 [DbLookupExtensions]
     Enabled = false
