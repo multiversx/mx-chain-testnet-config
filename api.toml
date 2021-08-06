@@ -112,7 +112,7 @@
 
 [APIPackages.log]
 	Routes = [
-        # /log will handle sending the log information
+         # /log will handle sending the log information
         { Name = "/log", Open = true }
 	]
 
