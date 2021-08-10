@@ -10,13 +10,13 @@ WORKDIR /go
 RUN git clone https://github.com/ElrondNetwork/elrond-go.git && cd elrond-go && git checkout --force $(cat /config/binaryVersion)
 WORKDIR /go/elrond-go
 RUN GO111MODULE=on go mod vendor
+
 #Elrond node
 WORKDIR /go/elrond-go/cmd/node
 RUN go build -i -v -ldflags="-X main.appVersion=$(git describe --tags --long --dirty)"
 RUN cp /go/pkg/mod/github.com/!elrond!network/arwen-wasm-vm@$(cat /go/elrond-go/go.mod | grep arwen-wasm-vm | sed 's/.* //' | tail -n 1)/wasmer/libwasmer_linux_amd64.so /lib/libwasmer_linux_amd64.so
-WORKDIR /go/elrond-go
 
-WORKDIR /config
+WORKDIR /go/elrond-go/config
 RUN cp -r * /go/elrond-go/cmd/node/config/
 
 WORKDIR /go/elrond-go/cmd/node
