@@ -7,8 +7,6 @@
   "metaChainMinNodes": 400,
   "hysteresis": 0.2,
   "adaptivity": false,
-  "chainID": "T",
-  "minTransactionVersion": 1,
   "initialNodes": [
     {
       "pubkey": "87846c1d7f0f2344dca00f9342ee3c03889dad1595abb307e555664f4fad339b5b7b35d69ef38404f01542f7c2bb8b18059b227a04ee855c502bec8f46a3292a6192d501bd58dcbd452bc45f55f639477021834e4650efce03fbe2a82b554d01",
