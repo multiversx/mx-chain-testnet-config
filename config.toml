@@ -596,7 +596,7 @@
 
 [StateTriesConfig]
     CheckpointRoundsModulus = 100
-    CheckpointsEnabled = true
+    CheckpointsEnabled = false
     AccountsStatePruningEnabled = true
     PeerStatePruningEnabled = true
     MaxStateTrieLevelInMemory = 5
@@ -628,16 +628,16 @@
     EnableTrigger = true
     EnableTriggerFromP2P = true
     PublicKeyToListenFrom = "d6d32e28f2df244624eeaccf5e08f7a6c617a6c948e4a42e19c1b6f68ea0c77eba3ee10501e179f788455d7e77c3cf082bc9a7a4fa8f136a25497189a37d10bc6826cc3ed5da714f6c931bce5af271e5d558e3b8142ad1e367fd95a4c7f88c11"
-	CloseAfterExportInMinutes = 10000
-	AfterHardFork = false
-	ImportFolder = "export"
-	StartRound = 10000
-	StartNonce = 10000
-	StartEpoch = 100
-	GenesisTime = 0
-	ValidatorGracePeriodInEpochs = 1 #defines how long is the rating computation disabled after hardfork
-	[Hardfork.ExportStateStorageConfig]
-	    [Hardfork.ExportStateStorageConfig.Cache]
+    CloseAfterExportInMinutes = 10000
+    AfterHardFork = false
+    ImportFolder = "export"
+    StartRound = 10000
+    StartNonce = 10000
+    StartEpoch = 100
+    GenesisTime = 0
+    ValidatorGracePeriodInEpochs = 1 #defines how long is the rating computation disabled after hardfork
+    [Hardfork.ExportStateStorageConfig]
+        [Hardfork.ExportStateStorageConfig.Cache]
             Name = "HardFork.ExportStateStorageConfig"
             Capacity = 5000
             Type = "LRU"
