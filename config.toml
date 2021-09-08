@@ -613,7 +613,7 @@
         ArwenVersions = [
             { StartEpoch = 0, Version = "v1.2" },
             { StartEpoch = 1, Version = "v1.3" },
-            { StartEpoch = 9, Version = "v1.4" },
+            { StartEpoch = 29, Version = "v1.4" },
         ]
 
     [VirtualMachine.Querying]
@@ -621,7 +621,7 @@
         ArwenVersions = [
             { StartEpoch = 0, Version = "v1.2" },
             { StartEpoch = 1, Version = "v1.3" },
-            { StartEpoch = 9, Version = "v1.4" },
+            { StartEpoch = 29, Version = "v1.4" },
         ]
 
 [Hardfork]
@@ -777,6 +777,16 @@
         Type = "LRU"
     [DbLookupExtensions.ResultsHashesByTxHashStorageConfig.DB]
         FilePath = "DbLookupExtensions_ResultsHashesByTx"
+        Type = "LvlDBSerial"
+        BatchDelaySeconds = 2
+        MaxBatchSize = 20000
+        MaxOpenFiles = 10
+    [DbLookupExtensions.ESDTSuppliesStorageConfig.Cache]
+        Name = "DbLookupExtensions.ESDTSuppliesStorage"
+        Capacity = 20000
+        Type = "LRU"
+    [DbLookupExtensions.ESDTSuppliesStorageConfig.DB]
+        FilePath = "DbLookupExtensions_ESDTSupplies"
         Type = "LvlDBSerial"
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
