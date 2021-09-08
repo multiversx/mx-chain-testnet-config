@@ -75,7 +75,7 @@
     CorrectLastUnjailedEnableEpoch = 1
 
     # RelayedTransactionsV2EnableEpoch represents the epoch when the relayed transactions V2 will be enabled
-    RelayedTransactionsV2EnableEpoch = 20
+    RelayedTransactionsV2EnableEpoch = 29
 
     # UnbondTokensV2EnableEpoch represents the epoch when the new implementation of the unbond tokens function is available
     UnbondTokensV2EnableEpoch = 1
@@ -94,19 +94,19 @@
 
     # IncrementSCRNonceInMultiTransferEnableEpoch represents the epoch when the fix for preventing the generation of the same SCRs
     # is enabled. The fix is done by adding an extra increment.
-    IncrementSCRNonceInMultiTransferEnableEpoch = 20
+    IncrementSCRNonceInMultiTransferEnableEpoch = 29
 
     # ESDTMultiTransferEnableEpoch represents the epoch when esdt multitransfer built in function is enabled
-    ESDTMultiTransferEnableEpoch = 20
+    ESDTMultiTransferEnableEpoch = 29
 
     # GlobalMintBurnDisableEpoch represents the epoch when the global mint and burn functions are disabled
-    GlobalMintBurnDisableEpoch = 20
+    GlobalMintBurnDisableEpoch = 29
 
     # ESDTTransferRoleEnableEpoch represents the epoch when esdt transfer role set is enabled
-    ESDTTransferRoleEnableEpoch = 20
+    ESDTTransferRoleEnableEpoch = 29
 
     # BuiltInFunctionOnMetaEnableEpoch represents the epoch when built in function processing on metachain is enabled
-    BuiltInFunctionOnMetaEnableEpoch = 20
+    BuiltInFunctionOnMetaEnableEpoch = 29
 
     # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
     MaxNodesChangeEnableEpoch = [
