@@ -61,7 +61,7 @@
     ESDTEnableEpoch = 1
 
     # GovernanceEnableEpoch represents the epoch when governance is enabled
-    GovernanceEnableEpoch = 1000000
+    GovernanceEnableEpoch = 2
 
     # DelegationManagerEnableEpoch represents the epoch when the delegation manager is enabled
     # epoch should not be 0
@@ -75,7 +75,7 @@
     CorrectLastUnjailedEnableEpoch = 1
 
     # RelayedTransactionsV2EnableEpoch represents the epoch when the relayed transactions V2 will be enabled
-    RelayedTransactionsV2EnableEpoch = 29
+    RelayedTransactionsV2EnableEpoch = 2
 
     # UnbondTokensV2EnableEpoch represents the epoch when the new implementation of the unbond tokens function is available
     UnbondTokensV2EnableEpoch = 1
@@ -110,6 +110,12 @@
 
     # ComputeRewardCheckpointEnableEpoch represents the epoch when compute rewards checkpoint epoch is enabled
     ComputeRewardCheckpointEnableEpoch = 163
+
+    # SCRSizeInvariantCheckEnableEpoch represents the epoch when the scr size invariant check is enabled
+    SCRSizeInvariantCheckEnableEpoch = 213
+
+    # BackwardCompSaveKeyValueEnableEpoch represents the epoch when the backward compatibility for save key value error is enabled
+    BackwardCompSaveKeyValueEnableEpoch = 213
 
     # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
     MaxNodesChangeEnableEpoch = [
