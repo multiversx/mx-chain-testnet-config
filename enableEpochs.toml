@@ -117,6 +117,24 @@
     # BackwardCompSaveKeyValueEnableEpoch represents the epoch when the backward compatibility for save key value error is enabled
     BackwardCompSaveKeyValueEnableEpoch = 213
 
+    # ESDTNFTCreateOnMultiShard represents the epoch when esdt nft creation is enabled on multiple shards
+    ESDTNFTCreateOnMultiShard = 405
+
+    # MetaESDTSetEnableEpoch represents the epoch when the backward compatibility for save key value error is enabled
+    MetaESDTSetEnableEpoch = 405
+
+    # AddTokensToDelegationEnableEpoch represents the epoch when adding tokens to delegation is enabled for whitelisted address
+    AddTokensToDelegationEnableEpoch = 405
+
+    # MultiESDTTransferFixOnCallBackOnEnableEpoch represents the epoch when multi esdt transfer on callback fix is enabled
+    MultiESDTTransferFixOnCallBackOnEnableEpoch = 405
+
+    # OptimizeGasUsedInCrossMiniBlocksEnableEpoch represents the epoch when gas used in cross shard mini blocks will be optimized
+    OptimizeGasUsedInCrossMiniBlocksEnableEpoch = 405
+
+    # CorrectFirstQueuedEpoch represents the epoch when the backward compatibility for setting the first queued node is enabled
+    CorrectFirstQueuedEpoch = 405
+
     # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
     MaxNodesChangeEnableEpoch = [
         { EpochEnable = 0, MaxNumNodes = 2169, NodesToShufflePerShard = 143 },
@@ -127,4 +145,5 @@
     GasScheduleByEpochs = [
         { StartEpoch = 0, FileName = "gasScheduleV1.toml" },
         { StartEpoch = 1, FileName = "gasScheduleV3.toml" },
+        { StartEpoch = 405, FileName = "gasScheduleV4.toml" },
     ]
