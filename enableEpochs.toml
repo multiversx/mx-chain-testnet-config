@@ -145,10 +145,10 @@
     RemoveNonUpdatedStorageEnableEpoch = 48
 
     # OptimizeNFTStoreEnableEpoch represents the epoch when optimizations on NFT metadata store and send are enabled
-    OptimizeNFTStoreEnableEpoch = 381
+    OptimizeNFTStoreEnableEpoch = 999999
 
     # CreateNFTThroughExecByCallerEnableEpoch represents the epoch when nft creation through execution on destination by caller is enabled
-    CreateNFTThroughExecByCallerEnableEpoch = 381
+    CreateNFTThroughExecByCallerEnableEpoch = 999999
 
     # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
     MaxNodesChangeEnableEpoch = [
@@ -161,5 +161,5 @@
         { StartEpoch = 0, FileName = "gasScheduleV1.toml" },
         { StartEpoch = 1, FileName = "gasScheduleV3.toml" },
         { StartEpoch = 48, FileName = "gasScheduleV4.toml" },
-        { StartEpoch = 381, FileName = "gasScheduleV5.toml" },
+        { StartEpoch = 999999, FileName = "gasScheduleV5.toml" },
     ]
