@@ -203,7 +203,7 @@
     ManagedCryptoAPIsEnableEpoch = 305
 
     # CheckFunctionArgumentEnableEpoch represents the epoch when the extra argument check is enabled in vm-common
-    CheckFunctionArgumentEnableEpoch = 550
+    CheckFunctionArgumentEnableEpoch = 540
 
     # CheckExecuteOnReadOnlyEnableEpoch represents the epoch when the extra checks are enabled for execution on read only
     CheckExecuteOnReadOnlyEnableEpoch = 540
