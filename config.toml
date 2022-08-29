@@ -673,6 +673,7 @@
 [StateTriesConfig]
     CheckpointRoundsModulus = 100
     CheckpointsEnabled = false
+    SnapshotsEnabled = true
     AccountsStatePruningEnabled = true
     PeerStatePruningEnabled = true
     MaxStateTrieLevelInMemory = 5
@@ -709,7 +710,12 @@
         MetaMaxGasPerVmQuery = 0  #unlimited
 
 [BuiltInFunctions]
-    AutomaticCrawlerAddress = "erd1fpkcgel4gcmh8zqqdt043yfcn5tyx8373kg6q2qmkxzu4dqamc0swts65c"
+    AutomaticCrawlerAddresses =[
+        "erd1l4zf3jhetzynwh5ged032vqulxx2xl0mlw8xq8t6pq8ut88gfgqq84vlvd", #shard 0
+        "erd1l5rhxs97yrh878jjjgr7zyevdclrtmxfjzx02hxe86qsqgc0vyqsdq84ua", #shard 1
+        "erd1642sv7ad5dy5ry7pwt574wappd7ffc90cdnqec6ealh265pvyqpqqwscad", #shard 2
+    ]
+    MaxNumAddressesInTransferRole = 100
 
 [Hardfork]
     EnableTrigger = true
@@ -801,10 +807,10 @@
         ProcessDataTrieOnCommitEpoch = true
 
 [Health]
-    IntervalVerifyMemoryInSeconds = 5
+    IntervalVerifyMemoryInSeconds = 30
     IntervalDiagnoseComponentsInSeconds = 30
     IntervalDiagnoseComponentsDeeplyInSeconds = 120
-    MemoryUsageToCreateProfiles = 2415919104 # 2.25GB
+    MemoryUsageToCreateProfiles = 3221225472 # 3 GB
     NumMemoryUsageRecordsToKeep = 100
     FolderPath = "health-records"
 
@@ -899,6 +905,7 @@
     MaxHardCapForMissingNodes = 5000
     #available versions: 1 and 2. 1 is the initial version, 2 is updated, more efficient version
     TrieSyncerVersion         = 2
+    CheckNodesOnDisk          = false
 
 [Resolvers]
     NumCrossShardPeers  = 2
@@ -906,7 +913,7 @@
     NumFullHistoryPeers = 3
 
 [HeartbeatV2]
-    PeerAuthenticationTimeBetweenSendsInSec          = 7200 # 2h
+    PeerAuthenticationTimeBetweenSendsInSec          = 3600 # 1h
     PeerAuthenticationTimeBetweenSendsWhenErrorInSec = 60   # 1min
     PeerAuthenticationThresholdBetweenSends          = 0.1  # 10%
     HeartbeatTimeBetweenSendsInSec                   = 60   # 1min
