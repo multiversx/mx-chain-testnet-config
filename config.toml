@@ -795,8 +795,8 @@
         ExtraPrintsOnShuffleOut = true
         DoProfileOnShuffleOut = true
     [Debug.EpochStart]
-        GoRoutineAnalyserEnabled = true
-        ProcessDataTrieOnCommitEpoch = true
+        GoRoutineAnalyserEnabled = false
+        ProcessDataTrieOnCommitEpoch = false
     [Debug.Process]
         Enabled = false
         DebuggingLogLevel = "*:DEBUG,p2p:TRACE,debug:DEBUG,process:TRACE,intercept:TRACE"
