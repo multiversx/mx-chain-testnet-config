@@ -118,8 +118,8 @@
     # BackwardCompSaveKeyValueEnableEpoch represents the epoch when the backward compatibility for save key value error is enabled
     BackwardCompSaveKeyValueEnableEpoch = 1
 
-    # ESDTNFTCreateOnMultiShard represents the epoch when esdt nft creation is enabled on multiple shards
-    ESDTNFTCreateOnMultiShard = 1
+    # ESDTNFTCreateOnMultiShardEnableEpoch represents the epoch when esdt nft creation is enabled on multiple shards
+    ESDTNFTCreateOnMultiShardEnableEpoch = 1
 
     # MetaESDTSetEnableEpoch represents the epoch when the backward compatibility for save key value error is enabled
     MetaESDTSetEnableEpoch = 1
@@ -212,14 +212,14 @@
     # ESDTMetadataContinuousCleanupEnableEpoch represents the epoch when esdt metadata is automatically deleted according to inshard liquidity
     ESDTMetadataContinuousCleanupEnableEpoch = 1185
 
-    # HeartbeatDisableEpoch represents the epoch when heartbeat v1 messages stop being sent and processed
-    HeartbeatDisableEpoch = 1185
-
     # MiniBlockPartialExecutionEnableEpoch represents the epoch when mini block partial execution will be enabled
     MiniBlockPartialExecutionEnableEpoch = 1185
 
     # FixAsyncCallBackArgsListEnableEpoch represents the epoch when the async callback arguments lists fix will be enabled
     FixAsyncCallBackArgsListEnableEpoch = 1401
+
+    # FixOldTokenLiquidityEnableEpoch represents the epoch when the fix for old token liquidity is enabled
+    FixOldTokenLiquidityEnableEpoch = 1625
 
     # SetSenderInEeiOutputTransferEnableEpoch represents the epoch when setting the sender in eei output transfers will be enabled
     SetSenderInEeiOutputTransferEnableEpoch = 999999
@@ -244,4 +244,5 @@
     GasScheduleByEpochs = [
         { StartEpoch = 0, FileName = "gasScheduleV1.toml" },
         { StartEpoch = 1, FileName = "gasScheduleV6.toml" },
+        { StartEpoch = 999999, FileName = "gasScheduleV7.toml" },
     ]
