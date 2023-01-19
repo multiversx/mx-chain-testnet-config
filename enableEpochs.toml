@@ -222,27 +222,27 @@
     FixOldTokenLiquidityEnableEpoch = 1
 
     # RuntimeMemStoreLimitEnableEpoch represents the epoch when the condition for Runtime MemStore is enabled
-    RuntimeMemStoreLimitEnableEpoch = 265
+    RuntimeMemStoreLimitEnableEpoch = 266
 
     # SetSenderInEeiOutputTransferEnableEpoch represents the epoch when setting the sender in eei output transfers will be enabled
-    SetSenderInEeiOutputTransferEnableEpoch = 265
+    SetSenderInEeiOutputTransferEnableEpoch = 266
 
     # RefactorPeersMiniBlocksEnableEpoch represents the epoch when refactor of the peers mini blocks will be enabled
-    RefactorPeersMiniBlocksEnableEpoch = 265
+    RefactorPeersMiniBlocksEnableEpoch = 266
 
     # MaxBlockchainHookCountersEnableEpoch represents the epoch when the max blockchainhook counters are enabled
-    MaxBlockchainHookCountersEnableEpoch = 265
+    MaxBlockchainHookCountersEnableEpoch = 266
 
     # WipeSingleNFTLiquidityDecreaseEnableEpoch represents the epoch when the system account liquidity is decreased for wipeSingleNFT as well
-    WipeSingleNFTLiquidityDecreaseEnableEpoch = 265
+    WipeSingleNFTLiquidityDecreaseEnableEpoch = 266
 
     # AlwaysSaveTokenMetaDataEnableEpoch represents the epoch when the token metadata is always saved
-    AlwaysSaveTokenMetaDataEnableEpoch = 265
+    AlwaysSaveTokenMetaDataEnableEpoch = 266
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
         { EnableEpoch = 0, Type = "no-KOSK"},
-        { EnableEpoch = 265, Type = "KOSK"}
+        { EnableEpoch = 266, Type = "KOSK"}
     ]
 
     # MaxNodesChangeEnableEpoch holds configuration for changing the maximum number of nodes and the enabling epoch
@@ -256,5 +256,5 @@
     GasScheduleByEpochs = [
         { StartEpoch = 0, FileName = "gasScheduleV1.toml" },
         { StartEpoch = 1, FileName = "gasScheduleV6.toml" },
-        { StartEpoch = 265, FileName = "gasScheduleV7.toml" },
+        { StartEpoch = 266, FileName = "gasScheduleV7.toml" },
     ]
