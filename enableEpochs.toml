@@ -243,7 +243,7 @@
     RuntimeCodeSizeFixEnableEpoch = 669
 
     # SetGuardianEnableEpoch represents the epoch when the guard account feature is enabled in the protocol
-    SetGuardianEnableEpoch = xxxxxx
+    SetGuardianEnableEpoch = 1182
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
