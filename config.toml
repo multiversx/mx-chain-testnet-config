@@ -8,7 +8,7 @@
     MaxComputableRounds = 100
 
     # StartInEpochEnabled represents that the fast bootstrap mechanism from the network is enabled if data is not
-    # available in local disk
+    # available in local disk 
     StartInEpochEnabled = true
 
     # ChainID represents the chain identifier
