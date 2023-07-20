@@ -248,6 +248,9 @@
     # RelayedNonceFixEnableEpoch represents the epoch when the nonce fix for relayed txs is enabled
     RelayedNonceFixEnableEpoch = 1781
 
+    # DeterministicSortOnValidatorsInfoEnableEpoch represents the epoch when the deterministic sorting on validators info is enabled
+    DeterministicSortOnValidatorsInfoEnableEpoch = 2390
+
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
         { EnableEpoch = 0, Type = "no-KOSK"},
