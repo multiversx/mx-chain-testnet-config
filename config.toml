@@ -723,7 +723,7 @@
     ]
     MaxNumAddressesInTransferRole = 100
     DNSV2Addresses =[
-        "erd1qqqqqqqqqqqqqpgqr46jrxr6r2unaqh75ugd308dwx5vgnhwh47qtvepe3", # TODO change this
+        "erd1qqqqqqqqqqqqqpgqcaxdjmqyhr9qets3x7h0fs99nxs0g0njh47q5n2awj",
     ]
 
 [Hardfork]
