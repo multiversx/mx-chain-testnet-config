@@ -25,6 +25,7 @@ FROM ubuntu:22.04
 RUN apt-get update -y && apt-get upgrade -y
 COPY --from=builder "/go/mx-chain-go/cmd/node" "/go/mx-chain-go/cmd/node/"
 COPY --from=builder "/lib/libwasmer_linux_amd64.so" "/lib/libwasmer_linux_amd64.so"
+COPY --from=builder "/lib/libvmexeccapi.so" "/lib/libvmexeccapi.so"
 WORKDIR /go/mx-chain-go/cmd/node/
 EXPOSE 8080
 ENTRYPOINT ["/go/mx-chain-go/cmd/node/node", "--rest-api-interface=:8080"]
