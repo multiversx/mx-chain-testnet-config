@@ -282,10 +282,10 @@
     NFTStopCreateEnableEpoch = 3350
 
     # ChangeOwnerAddressCrossShardThroughSCEnableEpoch represents the epoch when the change owner address built in function will work also through a smart contract call cross shard
-    ChangeOwnerAddressCrossShardThroughSCEnableEpoch = xxxxxxx
+    ChangeOwnerAddressCrossShardThroughSCEnableEpoch = 3900
 
     # FixGasRemainingForSaveKeyValueBuiltinFunctionEnableEpoch represents the epoch when the fix for the remaining gas in the SaveKeyValue builtin function is enabled
-    FixGasRemainingForSaveKeyValueBuiltinFunctionEnableEpoch = xxxxxx
+    FixGasRemainingForSaveKeyValueBuiltinFunctionEnableEpoch = 3900
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
