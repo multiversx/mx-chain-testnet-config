@@ -63,6 +63,8 @@
     InitialPeerList = [
         "/ip4/128.199.37.240/tcp/10000/p2p/16Uiu2HAm6hPymvkZyFgbvWaVBKhEoPjmXhkV32r9JaFvQ7Rk8ynU",
         "/ip4/188.166.40.176/tcp/10000/p2p/16Uiu2HAmJwaij2Wu7BEg2s1GVrmNTP2WaTaLqAZ1tRfbHBCcQ2LF",
+        "/ip4/188.166.19.8/tcp/10000/p2p/16Uiu2HAmSC6FCft5QiyrPLDUJB8QnEKrHypVX8vEJ4iqut7DPQt6",
+        "/ip4/188.166.22.186/tcp/10000/p2p/16Uiu2HAkwnbBQS3oJmAewgrqVtsGG9mz9Awnjhzocg5Y9r46pvNy",
     ]
 
     #kademlia's routing table bucket size
