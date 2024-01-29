@@ -40,6 +40,9 @@
    # Make sure that this is greater than the unbonding period!
    SetGuardianEpochsDelay = 4 # 2 times the unbonding period
 
+[HardwareRequirements]
+    CPUFlags = ["SSE4", "SSE42"]
+
 [Versions]
     DefaultVersion = "default"
     VersionsByEpochs = [
