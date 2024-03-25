@@ -1,6 +1,6 @@
 {
-  "startTime": 1711447200,
-  "startTimeTBD": "Tuesday, March 26, 2024 10:00:00 AM",
+  "startTime": 1711375200,
+  "startTimeHumanReadable": "Monday, March 25, 2024 14:00:00 UTC",
   "roundDuration": 6000,
   "consensusGroupSize": 63,
   "minNodesPerShard": 400,
