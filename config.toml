@@ -345,32 +345,6 @@
         ShardIDProviderType = "BinarySplit"
         NumShards = 4
 
-[AccountsTrieCheckpointsStorage]
-    [AccountsTrieCheckpointsStorage.Cache]
-        Name = "AccountsTrieCheckpointsStorage"
-        Capacity = 100000
-        Type = "SizeLRU"
-        SizeInBytes = 52428800 #50MB
-    [AccountsTrieCheckpointsStorage.DB]
-        FilePath = "AccountsTrieCheckpoints"
-        Type = "LvlDBSerial"
-        BatchDelaySeconds = 2
-        MaxBatchSize = 45000
-        MaxOpenFiles = 10
-
-[PeerAccountsTrieCheckpointsStorage]
-    [PeerAccountsTrieCheckpointsStorage.Cache]
-        Name = "PeerAccountsTrieCheckpointsStorage"
-        Capacity = 10000
-        Type = "SizeLRU"
-        SizeInBytes = 52428800 #50MB
-    [PeerAccountsTrieCheckpointsStorage.DB]
-        FilePath = "PeerAccountsTrieCheckpoints"
-        Type = "LvlDBSerial"
-        BatchDelaySeconds = 2
-        MaxBatchSize = 1000
-        MaxOpenFiles = 10
-
 [EvictionWaitingList]
     #total max size ~ 2 * [(RoothashesSize * 32) + (HashesSize * 32)]
     RootHashesSize = 10000
@@ -386,7 +360,6 @@
     PruningBufferLen = 100000
     SnapshotsBufferLen = 1000000
     SnapshotsGoroutineNum = 200
-    CheckpointHashesHolderMaxSize = 52428800 #50MB
 
 [HeadersPoolConfig]
     MaxHeadersPerShard = 1000
@@ -657,6 +630,7 @@
 
     MinNumConnectedPeersToStart       = 6
     MinNumOfPeersToConsiderBlockValid = 6
+    ExtraDelayForRequestBlockInfoInMilliseconds = 3000
 
 # ResourceStats, if enabled, will output in a folder called "stats"
 # resource statistics. For example: number of active go routines, memory allocation, number of GC sweeps, etc.
@@ -681,13 +655,12 @@
     Version = 0  # Setting 0 means 'use default value'
 
 [StateTriesConfig]
-    CheckpointRoundsModulus = 100
-    CheckpointsEnabled = false
     SnapshotsEnabled = true
     AccountsStatePruningEnabled = false
     PeerStatePruningEnabled = true
     MaxStateTrieLevelInMemory = 5
     MaxPeerTrieLevelInMemory = 5
+    StateStatisticsEnabled = false
 
 [BlockSizeThrottleConfig]
     MinSizeInBytes = 104857 # 104857 is 10% from 1MB
@@ -833,8 +806,12 @@
     FolderPath = "health-records"
 
 [SoftwareVersionConfig]
-    StableTagLocation = "https://api.github.com/repos/multiversx/mx-chain-testnet-config/releases/latest"
+    StableTagLocation = "https://api.github.com/repos/multiversx/mx-chain-go/releases/latest"
     PollingIntervalInMinutes = 65
+
+[GatewayMetricsConfig]
+    # TODO: set this to gateway URL based on testnet/devnet/mainnet env
+    URL = "https://testnet-gateway.multiversx.com"
 
 [LogsAndEvents]
     SaveInStorageEnabled = false
@@ -933,25 +910,25 @@
 
 [HeartbeatV2]
     PeerAuthenticationTimeBetweenSendsInSec          = 3600 # 1h
-    PeerAuthenticationTimeBetweenSendsWhenErrorInSec = 60   # 1min
-    PeerAuthenticationTimeThresholdBetweenSends      = 0.1  # 10%   # max random threshold between messages, representing a percent of PeerAuthenticationTimeBetweenSendsInSec
-    HeartbeatTimeBetweenSendsInSec                   = 300  # 5min
-    HeartbeatTimeBetweenSendsDuringBootstrapInSec    = 60   # 1min
-    HeartbeatTimeBetweenSendsWhenErrorInSec          = 60   # 1min
-    HeartbeatTimeThresholdBetweenSends               = 0.1  # 10%        # max random threshold between messages, representing a percent of HeartbeatTimeBetweenSendsInSec
-    HeartbeatExpiryTimespanInSec                     = 5400 # 1h30min    # heartbeat message max age allowed
-    MinPeersThreshold                                = 0.8  # 80%        # min threshold of peers to consider enough peer auths received
-    DelayBetweenPeerAuthenticationRequestsInSec      = 5    # 5sec       # delay between requests
-    PeerAuthenticationMaxTimeoutForRequestsInSec     = 7200 # 2h         # max timeout allowed to receive peer auth messages from peers
-    PeerShardTimeBetweenSendsInSec                   = 1800 # 30min
-    PeerShardTimeThresholdBetweenSends               = 0.1  # 10%        # max random threshold between messages, representing a percent of PeerShardTimeBetweenSendsInSec
-    MaxMissingKeysInRequest                          = 500               # max number of missing keys allowed in a request
-    MaxDurationPeerUnresponsiveInSec                 = 900  # 15min      # max duration after which a peer is considered inactive
-    HideInactiveValidatorIntervalInSec               = 3600 # 1h         # time that an inactive validator is returned through api
-    HardforkTimeBetweenSendsInSec                    = 60   # 1min       # time between hardfork messages
-    TimeBetweenConnectionsMetricsUpdateInSec         = 30   # 30sec      # time between consecutive connections metrics updates
-    TimeToReadDirectConnectionsInSec                 = 15   # 15sec      # time between consecutive peer shard mapper updates with direct connections
-    PeerAuthenticationTimeBetweenChecksInSec         = 6    # 6sec
+    PeerAuthenticationTimeBetweenSendsWhenErrorInSec = 60    # 1min
+    PeerAuthenticationTimeThresholdBetweenSends      = 0.1   # 10%   # max random threshold between messages, representing a percent of PeerAuthenticationTimeBetweenSendsInSec
+    HeartbeatTimeBetweenSendsInSec                   = 300   # 5min
+    HeartbeatTimeBetweenSendsDuringBootstrapInSec    = 60    # 1min
+    HeartbeatTimeBetweenSendsWhenErrorInSec          = 60    # 1min
+    HeartbeatTimeThresholdBetweenSends               = 0.1   # 10%        # max random threshold between messages, representing a percent of HeartbeatTimeBetweenSendsInSec
+    HeartbeatExpiryTimespanInSec                     = 5400  # 1h30min         # heartbeat message max age allowed
+    MinPeersThreshold                                = 0.8   # 80%        # min threshold of peers to consider enough peer auths received
+    DelayBetweenPeerAuthenticationRequestsInSec      = 5     # 5sec       # delay between requests
+    PeerAuthenticationMaxTimeoutForRequestsInSec     = 7200  # 2h         # max timeout allowed to receive peer auth messages from peers
+    PeerShardTimeBetweenSendsInSec                   = 1800  # 30min
+    PeerShardTimeThresholdBetweenSends               = 0.1   # 10%        # max random threshold between messages, representing a percent of PeerShardTimeBetweenSendsInSec
+    MaxMissingKeysInRequest                          = 500                # max number of missing keys allowed in a request
+    MaxDurationPeerUnresponsiveInSec                 = 900   # 15min      # max duration after which a peer is considered inactive
+    HideInactiveValidatorIntervalInSec               = 3600  # 1h         # time that an inactive validator is returned through api
+    HardforkTimeBetweenSendsInSec                    = 60    # 1min       # time between hardfork messages
+    TimeBetweenConnectionsMetricsUpdateInSec         = 30    # 30sec      # time between consecutive connections metrics updates
+    TimeToReadDirectConnectionsInSec                 = 15    # 15sec      # time between consecutive peer shard mapper updates with direct connections
+    PeerAuthenticationTimeBetweenChecksInSec         = 6     # 6sec
     [HeartbeatV2.HeartbeatPool]
         Name = "HeartbeatPool"
         Capacity = 50000
