@@ -11,7 +11,7 @@ jobs:
   build-docker-image:
     strategy:
       matrix:
-        runs-on: [ubuntu-latest]
+        runs-on: [macos-13-xlarge]
     runs-on: ${{ matrix.runs-on }}
 
     steps:
