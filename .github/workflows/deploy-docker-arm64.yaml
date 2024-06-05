@@ -38,4 +38,4 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/arm64/v8
           push: false
-          tags: "${REGISTRY_HOSTNAME}/${IMAGE_NODE}:${{ steps.get_version.outputs.VERSION }}"
+          tags: "${REGISTRY_HOSTNAME}/${IMAGE_NODE}:v0.0.0"
