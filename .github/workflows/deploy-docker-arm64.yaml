@@ -11,7 +11,7 @@ jobs:
   build-docker-image:
     strategy:
       matrix:
-        runs-on: [macos-13-xlarge]
+        runs-on: [ubuntu-latest]
     runs-on: ${{ matrix.runs-on }}
 
     steps:
@@ -37,5 +37,5 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           platforms: linux/arm64/v8
-          push: false
+          push: true
           tags: multiversx/chain-testnet:v0.0.0
