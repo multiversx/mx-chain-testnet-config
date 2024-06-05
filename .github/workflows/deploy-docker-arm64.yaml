@@ -5,7 +5,7 @@ env:
 name: Build Docker image & push
 
 on:
-  pull-request:
+  pull_request:
 
 jobs:
   build-docker-image:
