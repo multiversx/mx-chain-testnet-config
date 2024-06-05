@@ -38,4 +38,4 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/arm64/v8
           push: false
-          tags: "${REGISTRY_HOSTNAME}/${IMAGE_NODE}:v0.0.0"
+          tags: multiversx/chain-testnet:v0.0.0
