@@ -5,7 +5,8 @@ env:
 name: Build Docker image & push
 
 on:
-  pull_request:
+  release:
+    types: [published]
 
 jobs:
   build-docker-image:
@@ -36,4 +37,4 @@ jobs:
           TAG_VERSION=${{ steps.get_version.outputs.VERSION }}
           cd ${GITHUB_WORKSPACE}
           # Build and push the image to Docker Hub
-          docker buildx build --platform linux/arm64/v8 -t "${DOCKERHUB_USERNAME}/${IMAGE_NODE}:${TAG_VERSION}" -f ./docker/Dockerfile --push .
+          docker buildx build --platform linux/arm64/v8 -t "${REGISTRY_HOSTNAME}/${IMAGE_NODE}:${TAG_VERSION}" -f ./docker/Dockerfile --push .
