@@ -1,5 +1,5 @@
 FROM golang:1.20.7 as builder
-MAINTAINER multiversx
+LABEL maintainer="multiversx"
 
 RUN apt-get update && apt-get install -y
 
