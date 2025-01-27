@@ -1,5 +1,5 @@
 # ===== FIRST STAGE =====
-FROM golang:1.20.7 as builder
+FROM golang:1.20.7 AS builder
 LABEL maintainer="multiversx"
 
 RUN apt-get update && apt-get install -y
