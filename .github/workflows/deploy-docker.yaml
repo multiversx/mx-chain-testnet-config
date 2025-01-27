@@ -44,5 +44,5 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: T1.8.9.0, latest
+          tags: multiversx/chain-testnet:T1.8.9.0,multiversx/chain-testnet:latest
           labels: ${{ steps.meta.outputs.labels }}
