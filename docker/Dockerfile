@@ -11,7 +11,7 @@ WORKDIR /go
 RUN git clone https://github.com/multiversx/mx-chain-go.git && cd mx-chain-go && git checkout --force $(cat /config/binaryVersion)
 WORKDIR /go/mx-chain-go
 
-# MultiversX node
+# Build MultiversX node
 WORKDIR /go/mx-chain-go/cmd/node
 RUN go build -v -ldflags="-X main.appVersion=$(git --git-dir /config/.git describe --tags --long --dirty)"
 
