@@ -1,12 +1,5 @@
 {
   "startTime": 1728581400,
-  "roundDuration": 6000,
-  "consensusGroupSize": 63,
-  "minNodesPerShard": 400,
-  "metaChainConsensusGroupSize": 400,
-  "metaChainMinNodes": 400,
-  "hysteresis": 0.2,
-  "adaptivity": false,
   "initialNodes": [
     {
       "pubkey": "ac86c65bac6c2459eb4ed762dd309f076b1578aa366ceb7f5d9bd6f05fb5a682ba2d73adbbcf02e1480be934b6928409f547796e6533cbc136255b3ed5b5836aa2e3f0f41ebb1f36d634a70183c8d990c66b5e8f8f19e27f91b2f3c274cc4e8a",
