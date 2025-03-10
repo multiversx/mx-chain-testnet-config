@@ -48,7 +48,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           platforms: linux/amd64,linux/arm64
-          push: false
+          push: true
           tags: |
             ${{ env.REGISTRY_HOSTNAME }}/${{ env.IMAGE_NODE }}:${{ env.LATEST_VERSION }}
             ${{ env.REGISTRY_HOSTNAME }}/${{ env.IMAGE_NODE }}:latest
