@@ -373,6 +373,7 @@ ChainParametersByEpoch = [
 
 [ProofsPoolConfig]
     CleanupNonceDelta = 3
+    BucketSize = 100
 
 [BadBlocksCache]
     Name = "BadBlocksCache"
