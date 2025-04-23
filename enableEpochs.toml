@@ -6,7 +6,7 @@
     BuiltInFunctionsEnableEpoch = 1
 
     # RelayedTransactionsEnableEpoch represents the epoch when the relayed transactions will be enabled
-    RelayedTransactionsEnableEpoch = 1
+    RelayedTransactionsEnableEpoch = 0
 
     # PenalizedTooMuchGasEnableEpoch represents the epoch when the penalization for using too much gas will be enabled
     PenalizedTooMuchGasEnableEpoch = 0
@@ -76,7 +76,7 @@
     CorrectLastUnjailedEnableEpoch = 1
 
     # RelayedTransactionsV2EnableEpoch represents the epoch when the relayed transactions V2 will be enabled
-    RelayedTransactionsV2EnableEpoch = 1
+    RelayedTransactionsV2EnableEpoch = 0
 
     # UnbondTokensV2EnableEpoch represents the epoch when the new implementation of the unbond tokens function is available
     UnbondTokensV2EnableEpoch = 1
@@ -313,37 +313,31 @@
     UseGasBoundedShouldFailExecutionEnableEpoch = 4
 
     # DynamicESDTEnableEpoch represents the epoch when dynamic NFT feature is enabled
-    DynamicESDTEnableEpoch = 261
+    DynamicESDTEnableEpoch = 5
 
     # EGLDInMultiTransferEnableEpoch represents the epoch when EGLD in multitransfer is enabled
-    EGLDInMultiTransferEnableEpoch = 261
+    EGLDInMultiTransferEnableEpoch = 5
 
     # CryptoOpcodesV2EnableEpoch represents the epoch when BLSMultiSig, Secp256r1 and other opcodes are enabled
-    CryptoOpcodesV2EnableEpoch = 261
+    CryptoOpcodesV2EnableEpoch = 5
 
     # UnjailCleanupEnableEpoch represents the epoch when the cleanup of the unjailed nodes is enabled
-    UnJailCleanupEnableEpoch = 261
+    UnJailCleanupEnableEpoch = 5
 
     # FixRelayedBaseCostEnableEpoch represents the epoch when the fix for relayed base cost will be enabled
-    FixRelayedBaseCostEnableEpoch = 261
+    FixRelayedBaseCostEnableEpoch = 5
 
     # MultiESDTNFTTransferAndExecuteByUserEnableEpoch represents the epoch when enshrined sovereign cross chain opcodes are enabled
     MultiESDTNFTTransferAndExecuteByUserEnableEpoch = 9999999
 
     # FixRelayedMoveBalanceToNonPayableSCEnableEpoch represents the epoch when the fix for relayed move balance to non payable sc will be enabled
-    FixRelayedMoveBalanceToNonPayableSCEnableEpoch = 261
+    FixRelayedMoveBalanceToNonPayableSCEnableEpoch = 5
 
     # RelayedTransactionsV3EnableEpoch represents the epoch when the relayed transactions v3 will be enabled
-    RelayedTransactionsV3EnableEpoch = 1182
+    RelayedTransactionsV3EnableEpoch = 5
 
     # RelayedTransactionsV3FixESDTTransferEnableEpoch represents the epoch when the fix for relayed transactions v3 with esdt transfer will be enabled
-    RelayedTransactionsV3FixESDTTransferEnableEpoch = 1439
-
-    # EquivalentMessagesEnableEpoch represents the epoch when the equivalent messages are enabled
-    EquivalentMessagesEnableEpoch = 2036
-
-    # FixedOrderInConsensusEnableEpoch represents the epoch when the fixed order in consensus is enabled
-    FixedOrderInConsensusEnableEpoch = 2036
+    RelayedTransactionsV3FixESDTTransferEnableEpoch = 5
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
