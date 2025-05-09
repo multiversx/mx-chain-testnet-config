@@ -340,7 +340,7 @@
     RelayedTransactionsV3FixESDTTransferEnableEpoch = 5
 
     # AndromedaEnableEpoch represents the epoch when the equivalent messages and fix order for consensus features are enabled
-    AndromedaEnableEpoch = 9999999
+    AndromedaEnableEpoch = 202
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
