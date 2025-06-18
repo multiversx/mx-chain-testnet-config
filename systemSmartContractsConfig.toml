@@ -20,6 +20,7 @@
 
 [GovernanceSystemSCConfig]
     OwnerAddress = "erd14wn5u82shpgyqhl0n2schlky3f7urq6zhksqv44ymm8azmefr7lqcwk5fc" #should use a multisign contract instead of a wallet address
+    MaxVotingDelayPeriodInEpochs = 30
     [GovernanceSystemSCConfig.V1]
         NumNodes           = 500
         ProposalCost       = "5000000000000000000" #5 eGLD
