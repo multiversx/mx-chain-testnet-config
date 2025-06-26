@@ -364,7 +364,7 @@
     GovernanceDisableProposeEnableEpoch = 768
 
     # GovernanceFixesEnableEpoch represents the epoch when governance fixes are enabled
-    GovernanceFixesEnableEpoch = 768
+    GovernanceFixesEnableEpoch = 769
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
