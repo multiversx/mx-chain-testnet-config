@@ -345,6 +345,27 @@
     # CheckBuiltInCallOnTransferValueAndFailEnableRound represents the ROUND when the check on transfer value fix is activated
     CheckBuiltInCallOnTransferValueAndFailEnableRound = 318267 # THIS MUST BE A ROUND
 
+    # MaskVMInternalDependenciesErrorsEnableEpoch represents the epoch when the additional internal erorr masking in vm is enabled
+    MaskVMInternalDependenciesErrorsEnableEpoch = 768
+
+    # FixBackTransferOPCODEEnableEpoch represents the epoch when the fix for back transfers opcode will be enabled
+    FixBackTransferOPCODEEnableEpoch = 768
+
+    # ValidationOnGobDecodeEnableEpoch represents the epoch when validation on GobDecode will be taken into account
+    ValidationOnGobDecodeEnableEpoch = 768
+
+    # BarnardOpcodesEnableEpoch represents the epoch when Barnard opcodes will be enabled
+    BarnardOpcodesEnableEpoch = 768
+
+    # AutomaticActivationOfNodesDisableEpoch represents the epoch when automatic activation of nodes for validators is disabled
+    AutomaticActivationOfNodesDisableEpoch = 768
+
+    # GovernanceDisableProposeEnableEpoch represents the epoch when governance disable proposal is enabled
+    GovernanceDisableProposeEnableEpoch = 768
+
+    # GovernanceFixesEnableEpoch represents the epoch when governance fixes are enabled
+    GovernanceFixesEnableEpoch = 769
+
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
         { EnableEpoch = 0, Type = "no-KOSK" },
