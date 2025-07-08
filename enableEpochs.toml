@@ -367,7 +367,7 @@
     GovernanceFixesEnableEpoch = 769
 
     # FixGetBalanceEnableEpoch represents the epoch when Barnard opcodes will be enabled
-    FixGetBalanceEnableEpoch = 9999999
+    FixGetBalanceEnableEpoch = 914
 
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
