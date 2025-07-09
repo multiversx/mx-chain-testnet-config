@@ -366,6 +366,9 @@
     # GovernanceFixesEnableEpoch represents the epoch when governance fixes are enabled
     GovernanceFixesEnableEpoch = 769
 
+    # FixGetBalanceEnableEpoch represents the epoch when get balance opcode fix will be enabled
+    FixGetBalanceEnableEpoch = 914
+
     # BLSMultiSignerEnableEpoch represents the activation epoch for different types of BLS multi-signers
     BLSMultiSignerEnableEpoch = [
         { EnableEpoch = 0, Type = "no-KOSK" },
