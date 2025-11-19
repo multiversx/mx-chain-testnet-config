@@ -52,7 +52,7 @@
         GrowthDividendAddress = "erd1enva49yfy9ja0e4ttncfmzr0vjv9k9rawuyg2h2g8nepqwmz8ltssvkglr" # TODO: update this
 
     [[RewardsSettings.RewardsConfigByEpoch]]
-        EpochEnable = 999999
+        EpochEnable = 2519
         LeaderPercentage = 0.1 #fraction of value 0.1 - 10%
         DeveloperPercentage = 0.3 #fraction of value 0.3 - 30%
         ProtocolSustainabilityPercentage = 0.1 #fraction of value 0.1 - 10%
