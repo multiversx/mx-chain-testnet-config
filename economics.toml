@@ -19,7 +19,7 @@
     GenesisMintingSenderAddress = "erd17rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rc0pu8s7rcqqkhty3"
 
     [GlobalSettings.TailInflation]
-        EnableEpoch        = 999999
+        EnableEpoch        = 2519
         StartYearInflation = 0.08757
         DecayPercentage    = 0.0025
         MinimumInflation   = 0.02
