@@ -3,7 +3,7 @@
     MinStakeValue = "100000000000000000000" #100 eGLD
     MinUnstakeTokensValue = "10000000000000000000" #10eGLD
     UnBondPeriod = 2400 # period as number of rounds
-    UnBondPeriodSupernova = 244000 # period as number of rounds
+    UnBondPeriodSupernova = 24000 # period as number of rounds
     UnBondPeriodInEpochs = 2
     MinStepValue = "100000000000000000000"
     NumRoundsWithoutBleed = 100
