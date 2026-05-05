@@ -54,8 +54,8 @@
     # ProtocolIDs represents the protocols that this node will advertise to other peers
     # To connect to other nodes, those nodes should have at least one common protocol string
     ProtocolIDs = [
-        "/erd/kad/0.1.1",
-        "/mvx/testnet-full-archive/1.0.0",
+        "/erd/kad/0.1.6",
+        "mvx-testnet-full-archive-may",
     ]
     # InitialPeerList represents the list of strings of some known nodes that will bootstrap this node
     # The address will be in a self-describing addressing format.
@@ -67,8 +67,8 @@
     # If the initial peers list is left empty, the node will not try to connect to other peers during initial bootstrap
     # phase but will accept connections and will do the network discovery if another peer connects to it
     InitialPeerList = [
-        "/ip4/188.166.19.8/tcp/10000/p2p/16Uiu2HAmMyBf1P7KeJFNPNoJ7sYtehzdyv6EcRxXvWJgFwdEpBU9",
-        "/ip4/188.166.22.186/tcp/10000/p2p/16Uiu2HAmRtrHRUjE8Lp2PwV54zb9zUmH385ZHifpuRL87UH5YAJe",
+        "/ip4/146.190.225.98/tcp/10000/p2p/16Uiu2HAmEzSWoHwEwM1DCVsx1J6fLQKSyWEdJPi5LeVbyzrYUUUE",
+        "/ip4/174.138.4.105/tcp/10000/p2p/16Uiu2HAmJgp5C18pkrvnRbVcaa5iUNTNpT3Pmjt48kjw9tniTQE4",
     ]
 
     # kademlia's routing table bucket size
