@@ -7,21 +7,33 @@
     [[HardforkExclusions.Exclusions.Intervals]]
         Low = 5535999
         High = 7056000
+    [[HardforkExclusions.Exclusions.Intervals]]
+        Low = 8152001
+        High = 8792730
 
 [[HardforkExclusions.Exclusions]]
     ShardID = 1
     [[HardforkExclusions.Exclusions.Intervals]]
         Low = 5535999
         High = 7056000
+    [[HardforkExclusions.Exclusions.Intervals]]
+        Low = 8152001
+        High = 8792730
 
 [[HardforkExclusions.Exclusions]]
     ShardID = 2
     [[HardforkExclusions.Exclusions.Intervals]]
         Low = 5535999
         High = 7056000
+    [[HardforkExclusions.Exclusions.Intervals]]
+        Low = 8152001
+        High = 8792730
 
 [[HardforkExclusions.Exclusions]]
     ShardID = 4294967295
     [[HardforkExclusions.Exclusions.Intervals]]
         Low = 5535999
         High = 7056000
+    [[HardforkExclusions.Exclusions.Intervals]]
+        Low = 8152001
+        High = 8792730
