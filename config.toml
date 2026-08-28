@@ -58,7 +58,31 @@ EpochChangeGracePeriodByEpoch = [
 # ProcessConfigsByEpoch represents the configuration of process configuration parameters by epoch
 ProcessConfigsByEpoch = [
     { EnableEpoch = 0, MaxMetaNoncesBehind = 15, MaxMetaNoncesBehindForGlobalStuck = 30, MaxShardNoncesBehind = 15 },
+    { EnableEpoch = 4127, MaxMetaNoncesBehind = 5, MaxMetaNoncesBehindForGlobalStuck = 8, MaxShardNoncesBehind = 5 },
     { EnableEpoch = 4128, MaxMetaNoncesBehind = 75, MaxMetaNoncesBehindForGlobalStuck = 120, MaxShardNoncesBehind = 75 },
+]
+
+ConsensusConfigsByRound = [
+    {
+    EnableRound = 0,
+    SubroundsTiming = [
+        { StartTime = 0.0,  EndTime = 0.05 },  # start round
+        { StartTime = 0.05, EndTime = 0.25 },  # block
+        { StartTime = 0.25, EndTime = 0.85 },  # signature
+        { StartTime = 0.85, EndTime = 0.95 },  # end round
+    ],
+    ProcessingThresholdPercent = 85
+    },
+    {
+    EnableRound = 4957930,
+    SubroundsTiming = [
+        { StartTime = 0.0,  EndTime = 0.05 },  # start round
+        { StartTime = 0.05, EndTime = 0.35 },  # block
+        { StartTime = 0.35, EndTime = 0.65 },  # signature
+        { StartTime = 0.65, EndTime = 0.95 },  # end round
+    ],
+    ProcessingThresholdPercent = 85
+    }
 ]
 
 ProcessConfigsByRound = [
@@ -96,8 +120,8 @@ ProcessConfigsByRound = [
 ]
 
 EpochStartConfigsByEpoch = [
-    { EnableEpoch = 0, GracePeriodRounds = 25, ExtraDelayForRequestBlockInfoInMilliseconds = 3000 },
-    { EnableEpoch = 4128, GracePeriodRounds = 250, ExtraDelayForRequestBlockInfoInMilliseconds = 220 },
+    { EnableEpoch = 0, GracePeriodRounds = 25 },
+    { EnableEpoch = 4128, GracePeriodRounds = 250 },
 ]
 
 EpochStartConfigsByRound = [
@@ -157,6 +181,12 @@ ConsensusConfigsByEpoch = [
     # smaller or equal to the NumOfEpochsToKeep flag
     NumActivePersisters = 3
 
+    # AssumedPeersNumActivePersisters represents the NumActivePersisters value the other (pruning) nodes in the
+    # network are assumed to run with. Used only to decide up to which epoch data can still be requested from
+    # regular peers. Keep in sync with the NumActivePersisters default shipped to validators/observers.
+    # A missing or 0 value falls back to the default of 3, with a warning at startup
+    AssumedPeersNumActivePersisters = 3
+
     # FullArchiveNumActivePersisters represents the number of persisters to be kept in cache as to allow better response
     # to inquiring peers. This value will get multiplied by the number of persisters required by the node to function so
     # it is a good idea to increase the maximum number of opened files allowed by the operating system
@@ -174,6 +204,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [ReceiptsStorage]
     [ReceiptsStorage.Cache]
@@ -187,6 +218,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [ScheduledSCRsStorage]
     [ScheduledSCRsStorage.Cache]
@@ -200,6 +232,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [PeerBlockBodyStorage]
     [PeerBlockBodyStorage.Cache]
@@ -213,6 +246,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [BlockHeaderStorage]
     [BlockHeaderStorage.Cache]
@@ -226,6 +260,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
         ShardIDProviderType = "BinarySplit"
         NumShards = 4
 
@@ -241,6 +276,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [MetaBlockStorage]
     [MetaBlockStorage.Cache]
@@ -254,6 +290,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
         ShardIDProviderType = "BinarySplit"
         NumShards = 4
 
@@ -269,6 +306,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [ExecutionResultsStorage]
     [ExecutionResultsStorage.Cache]
@@ -282,6 +320,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [TxStorage]
     [TxStorage.Cache]
@@ -295,6 +334,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 30000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
         ShardIDProviderType = "BinarySplit"
         NumShards = 4
 
@@ -310,6 +350,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [RewardTxStorage]
     [RewardTxStorage.Cache]
@@ -323,6 +364,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [SmartContractsStorage]
     [SmartContractsStorage.Cache]
@@ -336,6 +378,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [SmartContractsStorageSimulate]
     [SmartContractsStorageSimulate.Cache]
@@ -349,6 +392,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [SmartContractsStorageForSCQuery]
     [SmartContractsStorageForSCQuery.Cache]
@@ -362,6 +406,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [StatusMetricsStorage]
     [StatusMetricsStorage.Cache]
@@ -374,6 +419,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [TrieEpochRootHashStorage]
     [TrieEpochRootHashStorage.Cache]
@@ -387,6 +433,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 500
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [ShardHdrNonceHashStorage]
     [ShardHdrNonceHashStorage.Cache]
@@ -400,6 +447,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [MetaHdrNonceHashStorage]
     [MetaHdrNonceHashStorage.Cache]
@@ -413,6 +461,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [AccountsTrieStorage]
     [AccountsTrieStorage.Cache]
@@ -441,6 +490,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [PeerAccountsTrieStorage]
     [PeerAccountsTrieStorage.Cache]
@@ -467,11 +517,15 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [TrieStorageManagerConfig]
     PruningBufferLen = 100000
     SnapshotsBufferLen = 1000000
-    SnapshotsGoroutineNum = 200
+    # SnapshotsGoroutinesPerCore scales the snapshot fan-out with the host: effective goroutines =
+    # value * GOMAXPROCS, minimum 4. Keep it low: a deep snapshot run queue can delay waking
+    # consensus goroutines
+    SnapshotsGoroutinesPerCore = 10
 
 [HeadersPoolConfig]
     MaxHeadersPerShard = 1000
@@ -512,6 +566,7 @@ ConsensusConfigsByEpoch = [
     MaxNumBytesPerSenderUpperBound = 33_554_432             #32MB
     MaxTrackedBlocks = 100
     PropagationGracePeriodMs = 200
+    MaxTxNonceDeltaAllowed = 100
 
 [TxCacheSelection]
     SelectionMaxNumTxs = 30000
@@ -524,7 +579,7 @@ ConsensusConfigsByEpoch = [
     # Ahead-of-Time transaction selection - pre-selects transactions before consensus round
     Enabled = true
     CacheSize = 10                                          # Number of pre-selection results to cache
-    SelectionTimeoutMs = 150                                # Max time for AOT selection in milliseconds
+    SelectionTimeoutMs = 100                                # Max time for AOT selection in milliseconds
 
 [TrieNodesChunksDataPool]
     Name = "TrieNodesDataPool"
@@ -632,10 +687,13 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 45000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
         UseTmpAsFilePath = true
 
 [Antiflood]
     Enabled = true
+    MaxAllowedTrieNodeChunks = 10
+    TrieNodeChunksInactivityTimeoutInSec = 10
     [[Antiflood.ConfigsByRound]]
         Round = 0
         NumConcurrentResolverJobs = 50
@@ -852,7 +910,11 @@ ConsensusConfigsByEpoch = [
 
     MinNumConnectedPeersToStart       = 6
     MinNumOfPeersToConsiderBlockValid = 6
-    ExtraDelayForRequestBlockInfoInMilliseconds = 220
+
+    # fallback prefetch patience, measured from the local (header + proof) observation.
+    # Must exceed the sender's broadcast chain (30ms miniblocks + 50ms transactions)
+    # plus the gossip delivery time of the broadcast data
+    ExtraDelayForRequestBlockInfoInMilliseconds = 400
 
 # ResourceStats, if enabled, will output in a folder called "stats"
 # resource statistics. For example: number of active go routines, memory allocation, number of GC sweeps, etc.
@@ -963,6 +1025,7 @@ ConsensusConfigsByEpoch = [
             BatchDelaySeconds = 2
             MaxBatchSize = 1000
             MaxOpenFiles = 10
+            BloomFilterBitsPerKey = 10
     [Hardfork.ExportKeysStorageConfig]
         [Hardfork.ExportKeysStorageConfig.Cache]
             Name = "HardFork.ExportKeysStorageConfig"
@@ -974,6 +1037,7 @@ ConsensusConfigsByEpoch = [
             BatchDelaySeconds = 2
             MaxBatchSize = 1000
             MaxOpenFiles = 10
+            BloomFilterBitsPerKey = 10
     [Hardfork.ExportTriesStorageConfig]
         [Hardfork.ExportTriesStorageConfig.Cache]
             Name = "HardFork.ExportTriesStorageConfig"
@@ -985,6 +1049,7 @@ ConsensusConfigsByEpoch = [
             BatchDelaySeconds = 2
             MaxBatchSize = 1000
             MaxOpenFiles = 10
+            BloomFilterBitsPerKey = 10
     [Hardfork.ImportStateStorageConfig]
         [Hardfork.ImportStateStorageConfig.Cache]
             Name = "HardFork.ImportStateStorageConfig"
@@ -996,6 +1061,7 @@ ConsensusConfigsByEpoch = [
             BatchDelaySeconds = 2
             MaxBatchSize = 1000
             MaxOpenFiles = 10
+            BloomFilterBitsPerKey = 10
     [Hardfork.ImportKeysStorageConfig]
         [Hardfork.ImportKeysStorageConfig.Cache]
             Name = "HardFork.ImportKeysStorageConfig"
@@ -1007,6 +1073,7 @@ ConsensusConfigsByEpoch = [
             BatchDelaySeconds = 2
             MaxBatchSize = 1000
             MaxOpenFiles = 10
+            BloomFilterBitsPerKey = 10
 
 [Debug]
     [Debug.InterceptorResolver]
@@ -1030,6 +1097,8 @@ ConsensusConfigsByEpoch = [
         ExtraPrintsOnShuffleOut = true
         DoProfileOnShuffleOut = true
     [Debug.EpochStart]
+        # dumps every goroutine stack on each epoch start, which stops the world and floods the log
+        # exactly while the epoch start snapshot runs; enable only when investigating goroutine leaks
         GoRoutineAnalyserEnabled = true
         ProcessDataTrieOnCommitEpoch = true
     [Debug.Process]
@@ -1068,6 +1137,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 100
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [DbLookupExtensions]
     Enabled = false
@@ -1082,6 +1152,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
     [DbLookupExtensions.MiniblockHashByTxHashStorageConfig.Cache]
         Name = "DbLookupExtensions.MiniblockHashByTxHashStorage"
         Capacity = 20000
@@ -1092,6 +1163,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
         ShardIDProviderType = "BinarySplit"
         NumShards = 4
     [DbLookupExtensions.EpochByHashStorageConfig.Cache]
@@ -1104,6 +1176,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
         ShardIDProviderType = "BinarySplit"
         NumShards = 4
     [DbLookupExtensions.ResultsHashesByTxHashStorageConfig.Cache]
@@ -1116,6 +1189,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
     [DbLookupExtensions.ESDTSuppliesStorageConfig.Cache]
         Name = "DbLookupExtensions.ESDTSuppliesStorage"
         Capacity = 20000
@@ -1126,6 +1200,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
     [DbLookupExtensions.RoundHashStorageConfig.Cache]
         Name = "DbLookupExtensions.RoundHashStorage"
         Capacity = 20000
@@ -1136,6 +1211,7 @@ ConsensusConfigsByEpoch = [
         BatchDelaySeconds = 2
         MaxBatchSize = 20000
         MaxOpenFiles = 10
+        BloomFilterBitsPerKey = 10
 
 [Logs]
     LogFileLifeSpanInMB = 1024 # 1GB
@@ -1153,6 +1229,7 @@ ConsensusConfigsByEpoch = [
     NumCrossShardPeers  = 2
     NumTotalPeers       = 3 # NumCrossShardPeers + num intra shard
     NumFullHistoryPeers = 3
+    RequestProofByNonceDelayMs = 100 # delay proof requests by nonce to allow the header to be received first
 
 [HeartbeatV2]
     PeerAuthenticationTimeBetweenSendsInSec          = 3600 # 1h
