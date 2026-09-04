@@ -105,7 +105,7 @@ ProcessConfigsByRound = [
     NumHeadersToRequestInAdvance = 10,
     ExtraDelayForBroadcastBlockInfoMs = 1000,
     ExtraDelayBetweenBroadcastMbsAndTxsMs = 1000,
-    xtraDelayForRequestBlockInfoMs = 3000
+    ExtraDelayForRequestBlockInfoMs = 3000
     },
     {
     EnableRound = 4957930,
