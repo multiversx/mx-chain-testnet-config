@@ -58,7 +58,8 @@ EpochChangeGracePeriodByEpoch = [
 # ProcessConfigsByEpoch represents the configuration of process configuration parameters by epoch
 ProcessConfigsByEpoch = [
     { EnableEpoch = 0, MaxMetaNoncesBehind = 15, MaxMetaNoncesBehindForGlobalStuck = 30, MaxShardNoncesBehind = 15 },
-    { EnableEpoch = 4128, MaxMetaNoncesBehind = 75, MaxMetaNoncesBehindForGlobalStuck = 120, MaxShardNoncesBehind = 75 },
+    { EnableEpoch = 4127, MaxMetaNoncesBehind = 5, MaxMetaNoncesBehindForGlobalStuck = 8, MaxShardNoncesBehind = 5 },
+    { EnableEpoch = 4128, MaxMetaNoncesBehind = 5, MaxMetaNoncesBehindForGlobalStuck = 8, MaxShardNoncesBehind = 5 },
 ]
 
 ConsensusConfigsByRound = [
@@ -101,20 +102,26 @@ ProcessConfigsByRound = [
     # the current machine will take over and propose/sign blocks. Used in both single-key and multi-key modes.
     MaxRoundsOfInactivityAccepted = 3,
     MaxBlockProcessingTimeMs = 6000, # this is only used after Supernova
-    NumHeadersToRequestInAdvance = 10
+    NumHeadersToRequestInAdvance = 10,
+    ExtraDelayForBroadcastBlockInfoMs = 1000,
+    ExtraDelayBetweenBroadcastMbsAndTxsMs = 1000,
+    ExtraDelayForRequestBlockInfoMs = 3000
     },
     {
     EnableRound = 4957930,
     MaxRoundsWithoutNewBlockReceived = 100,
     MaxRoundsWithoutCommittedBlock = 100,
-    RoundModulusTriggerWhenSyncIsStuck = 200,
+    RoundModulusTriggerWhenSyncIsStuck = 20,
     MaxSyncWithErrorsAllowed = 100,
     MaxRoundsToKeepUnprocessedMiniBlocks = 3000,
     MaxRoundsToKeepUnprocessedTransactions = 3000,
     MaxConsecutiveRoundsOfRatingDecrease = 6000,
     MaxRoundsOfInactivityAccepted = 30,
     MaxBlockProcessingTimeMs = 6000,
-    NumHeadersToRequestInAdvance = 10
+    NumHeadersToRequestInAdvance = 10,
+    ExtraDelayForBroadcastBlockInfoMs = 30,
+    ExtraDelayBetweenBroadcastMbsAndTxsMs = 50,
+    ExtraDelayForRequestBlockInfoMs = 400
     }
 ]
 
@@ -578,7 +585,7 @@ ConsensusConfigsByEpoch = [
     # Ahead-of-Time transaction selection - pre-selects transactions before consensus round
     Enabled = true
     CacheSize = 10                                          # Number of pre-selection results to cache
-    SelectionTimeoutMs = 150                                # Max time for AOT selection in milliseconds
+    SelectionTimeoutMs = 100                                # Max time for AOT selection in milliseconds
 
 [TrieNodesChunksDataPool]
     Name = "TrieNodesDataPool"
@@ -781,8 +788,8 @@ ConsensusConfigsByEpoch = [
                     Threshold = 10 #if consensus size will exceed this value, then
                     Factor = 1.0   #increase the base value with [factor*consensus size]
             [Antiflood.ConfigsByRound.FastReacting.BlackList]
-                ThresholdNumMessagesPerInterval = 100000
-                ThresholdSizePerInterval = 123886080 #120MB/s
+                ThresholdNumMessagesPerInterval = 10000
+                ThresholdSizePerInterval = 83886080 #80MB/s
                 NumFloodingRounds = 10
                 PeerBanDurationInSeconds = 300
 
@@ -796,8 +803,8 @@ ConsensusConfigsByEpoch = [
                     Threshold = 10 #if consensus size will exceed this value, then
                     Factor = 0.0   #increase the base value with [factor*consensus size]
             [Antiflood.ConfigsByRound.SlowReacting.BlackList]
-                ThresholdNumMessagesPerInterval = 1000000
-                ThresholdSizePerInterval = 607487360 # 600MB/interval
+                ThresholdNumMessagesPerInterval = 100000
+                ThresholdSizePerInterval = 377487360 # 360MB/interval
                 NumFloodingRounds = 2
                 PeerBanDurationInSeconds = 3600
 
@@ -805,21 +812,21 @@ ConsensusConfigsByEpoch = [
             IntervalInSeconds = 1
             ReservedPercent   = 0.0
             [Antiflood.ConfigsByRound.OutOfSpecs.PeerMaxInput]
-                BaseMessagesPerInterval = 200000
-                TotalSizePerInterval = 1048576000 # 1000MB/interval
+                BaseMessagesPerInterval = 20000
+                TotalSizePerInterval = 104857600 # 100MB/interval
                 [Antiflood.ConfigsByRound.OutOfSpecs.PeerMaxInput.IncreaseFactor]
                     Threshold = 0 #if consensus size will exceed this value, then
                     Factor = 0.0     #increase the base value with [factor*consensus size]
             [Antiflood.ConfigsByRound.OutOfSpecs.BlackList]
-                ThresholdNumMessagesPerInterval = 360000
-                ThresholdSizePerInterval = 185829120 # 180MB/interval
+                ThresholdNumMessagesPerInterval = 36000
+                ThresholdSizePerInterval = 125829120 # 120MB/interval
                 NumFloodingRounds = 2
                 PeerBanDurationInSeconds = 3600
 
         [Antiflood.ConfigsByRound.PeerMaxOutput]
             [Antiflood.ConfigsByRound.PeerMaxOutput.PeerMaxInput]
-                BaseMessagesPerInterval  = 150000
-                TotalSizePerInterval     = 309715200 #30MB/s
+                BaseMessagesPerInterval  = 1500
+                TotalSizePerInterval     = 20971520 #20MB/s
 
         [Antiflood.ConfigsByRound.Cache]
             Name = "Antiflood"
@@ -909,11 +916,6 @@ ConsensusConfigsByEpoch = [
 
     MinNumConnectedPeersToStart       = 6
     MinNumOfPeersToConsiderBlockValid = 6
-
-    # fallback prefetch patience, measured from the local (header + proof) observation.
-    # Must exceed the sender's broadcast chain (30ms miniblocks + 50ms transactions)
-    # plus the gossip delivery time of the broadcast data
-    ExtraDelayForRequestBlockInfoInMilliseconds = 400
 
 # ResourceStats, if enabled, will output in a folder called "stats"
 # resource statistics. For example: number of active go routines, memory allocation, number of GC sweeps, etc.
