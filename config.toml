@@ -917,11 +917,6 @@ ConsensusConfigsByEpoch = [
     MinNumConnectedPeersToStart       = 6
     MinNumOfPeersToConsiderBlockValid = 6
 
-    # fallback prefetch patience, measured from the local (header + proof) observation.
-    # Must exceed the sender's broadcast chain (30ms miniblocks + 50ms transactions)
-    # plus the gossip delivery time of the broadcast data
-    ExtraDelayForRequestBlockInfoInMilliseconds = 400
-
 # ResourceStats, if enabled, will output in a folder called "stats"
 # resource statistics. For example: number of active go routines, memory allocation, number of GC sweeps, etc.
 # RefreshIntervalInSec will tell how often a new line containing stats should be added in stats file
