@@ -1003,6 +1003,19 @@ ConsensusConfigsByEpoch = [
         "erd1qqqqqqqqqqqqqpgq73dzn6rmncfsr9054hjam3zc0th7w7ex8tksv9z97n",
     ]
 
+# Each interval is inclusive. Keep previous intervals when adding a later recovery.
+# [[HardforkRoundExclusions]]
+#     StartRound = 0
+#     EndRound = 0
+
+[HardforkRecoveryCheckpoint]
+    Enabled = false
+    Round = 0
+
+# [[HardforkRecoveryCheckpoint.Headers]]
+#     ShardID = 0
+#     Hash = ""
+
 [Hardfork]
     EnableTrigger = true
     EnableTriggerFromP2P = true
