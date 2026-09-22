@@ -1006,7 +1006,7 @@ ConsensusConfigsByEpoch = [
  # Each interval is inclusive. Keep previous intervals when adding a later recovery.
  [[HardforkRoundExclusions]]
      StartRound = 29371592
-     EndRound = 29817629
+     EndRound = 29847631
 
 [HardforkRecoveryCheckpoint]
     Enabled = true
