@@ -1009,12 +1009,24 @@ ConsensusConfigsByEpoch = [
 #     EndRound = 0
 
 [HardforkRecoveryCheckpoint]
-    Enabled = false
-    Round = 0
+    Enabled = true
+    Round = 1789810776600
 
-# [[HardforkRecoveryCheckpoint.Headers]]
-#     ShardID = 0
-#     Hash = ""
+[[HardforkRecoveryCheckpoint.Headers]]
+    ShardID = 4294967295
+    Hash = "2743201fa14a8567afd9ed5f2651812a1fff83d16abb13a0270ab1c307422c7a"
+
+[[HardforkRecoveryCheckpoint.Headers]]
+     ShardID = 0
+     Hash = "84406d326f0690d8ad531579f7c50100882502d4e3558f08206dff4620631df6"
+
+[[HardforkRecoveryCheckpoint.Headers]]
+    ShardID = 1
+    Hash = "bdbad9fc953bfe23dfc1e14b9393189fc93877a0d9fe990f885294e7e3a8bfe9"
+
+[[HardforkRecoveryCheckpoint.Headers]]
+    ShardID = 2
+    Hash = "40cd572870433c1a455c61b8bfc71ea16fdfb5a165c34aaa1cf9622e0a0e3217"
 
 [Hardfork]
     EnableTrigger = true
